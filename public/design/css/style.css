@@ -1,0 +1,1535 @@
+html,body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(/design/image/background.png) repeat center top #181818;
+	font-family: Arial, sans-serif;
+}
+
+table tr td {
+	border: 0px;
+}
+
+.wrapper {
+	margin-top: -6px;
+	min-height: 100%;
+}
+
+header {
+	background-color: #212121;
+	box-shadow: 0 -1px 2px #111111;
+	height: 70px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+header p {
+	color: #fff;
+	font-family: tahoma;
+	font-size: 20px;
+	font-weight: normal;
+	text-align: center;
+}
+
+header a.stuts,a.stuts:visited {
+	border: none;
+	color: #4280af;
+	font-family: tahoma;
+	font-size: 14px;
+	line-height: 31px;
+	text-decoration: none;
+}
+
+header a.stuts:hover {
+	color: #fffb89;
+}
+
+header .stuts span {
+	font-size: 22px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.left-block {
+	float:left;
+	display:inline;
+	margin: 5px 5px 5px 70px;
+}
+
+.right-block {
+	float:right;
+	display:inline;
+	margin: 5px 30px 5px 5px;
+}
+
+.lie-header {
+	background-color: #212121;
+	box-shadow: 0 -1px 2px #111111;
+	height: 70px;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+.footer {
+	margin-top: -70px;
+ /* negative value of footer height */
+	height: 70px;
+	clear: both;
+	width: 100%;
+	background-color: #212121;
+}
+
+.footer p {
+	color: #fff;
+	font-family: tahoma;
+	font-size: 20px;
+}
+
+img, object, video, embed {
+	width: 100%;
+	height: 100%;
+}
+
+video {
+	max-width: 1230px;
+	max-height: 692px;
+}
+
+.content {
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 70px;
+	max-width: 1485px;
+	max-height: 100%;
+}
+
+.upload {
+	max-width: 100%;
+	margin: 50px auto;
+}
+
+.line-block {
+	border: 1px solid #fff;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0px 0px 8px 0px #000;
+	color: #000;
+	float: left;
+	height: 200px;
+	-khtml-border-radius: 6px 6px 6px 6px;
+	-khtml-box-shadow: 0px 0px 8px 0px #000;
+	margin: 15px 1px 15px 15px;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-moz-box-shadow: 0px 0px 8px 0px #000;
+	padding: 10px;
+	text-align: center;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	-webkit-box-shadow: 0px 0px 8px 0px #000;
+	width: 320px;
+}
+
+.line-block table tr td {
+	width: 100%;
+	border: 0px;
+}
+
+.block-left {
+	text-align: left;
+	float:left;
+	display:inline;
+	font-size: 12px;
+	margin-top: 3px;
+}
+
+.block-right {
+	text-align: right;
+	float:right;
+	display:inline;
+	color: #49423d;
+	font-size: 14px;
+	margin-top: 3px;
+}
+
+.view-block {
+	border: 1px solid #fff;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0px 0px 8px 0px #000;
+	color: #000;
+	max-height: 1054px;
+	-khtml-border-radius: 6px 6px 6px 6px;
+	-khtml-box-shadow: 0px 0px 8px 0px #000;
+	-moz-border-radius: 6px 6px 6px 6px;
+	-moz-box-shadow: 0px 0px 8px 0px #000;
+	padding: 10px;
+	text-align: center;
+	-webkit-border-radius: 6px 6px 6px 6px;
+	-webkit-box-shadow: 0px 0px 8px 0px #000;
+	max-width: 1230px;
+	margin: 0 auto;
+}
+
+.view-block table tr td {
+	width: 100%;
+	border: 0px;
+}
+
+.page-block {
+	padding: 5px;
+	text-align: center;
+	font-size: 24px;
+}
+
+h1 {
+	text-align: center;
+}
+
+a:link {
+	color: #EF7D55;
+}
+
+a:visited {
+	color: #EF7D55;
+}
+
+a:hover {
+	color: #05f04b;
+}
+
+a:active {
+	color: #497DDD;
+}
+
+.auth {
+	max-width: 300px;
+}
+
+.form-auth {
+	border-radius: 6px;
+	font-size: 18px;
+	height: 46px;
+	line-height: 1.3333333;
+	padding: 10px 16px;
+}
+
+.form-auth-2 {
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	color: #555;
+	display: block;
+	font-size: 14px;
+	height: 34px;
+	line-height: 1.42857143;
+	o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	padding: 6px 12px;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+	webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	width: 100%;
+}
+
+.btn-auth {
+	font-size: 18px;
+	line-height: 1.3333333;
+	border-radius: 6px;
+	padding: 6px 28px;
+	background-color: #212121;
+	background-image: none;
+	border: 1px solid transparent;
+	border-bottom-color: transparent;
+	border-color: #4cae4c;
+	border-left-color: transparent;
+	border-radius: 4px;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	margin-bottom: 0;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	padding: 6px 12px;
+	text-align: center;
+	touch-action: manipulation;
+	user-select: none;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	white-space: nowrap;
+}
+
+.box {
+	position: relative;
+	overflow: hidden;
+}
+
+.video-thumb {
+	width: 320px;
+	height: 180px;
+}
+
+.overley {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(/design/image/play.png) no-repeat center center;
+}
+
+/*------------- menu!!!!!!!!!!!!!!!!!! ---------*/
+
+html {
+	overflow-x: hidden;
+}
+
+/*----------------- button ---------*/
+.button {
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	z-index: 10000;
+	background: transparent;
+	width: 50px;
+	height: 40px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button > .line {
+	display: block;
+	width: 80%;
+	height: 2px;
+	background: #fff;
+	margin: 8px auto;
+}
+
+.button .line:nth-child(1), .button .line:nth-child(3) {
+	-webkit-transform: rotate(0deg) translateY(0);
+	-moz-transform: rotate(0deg) translateY(0);
+	transform: rotate(0deg) translateY(0);
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.button .line:nth-child(2) {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	transform: translateX(0);
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+/*-------------- the close button ---------*/
+
+.close .line:nth-child(1) {
+	-webkit-transform: rotate(45deg) translateY(15px);
+	-moz-transform: rotate(45deg) translateY(15px);
+	transform: rotate(45deg) translateY(15px);
+}
+
+.close .line:nth-child(3) {
+	-webkit-transform: rotate(-45deg) translateY(-15px);
+	-moz-transform: rotate(-45deg) translateY(-15px);
+	transform: rotate(-45deg) translateY(-15px);
+}
+
+.close .line:nth-child(2) {
+	-webkit-transform: translateX(-100px);
+	-moz-transform: translateX(-100px);
+	transform: translateX(-100px);
+}
+
+
+/*---------------- menu -----------*/
+.menu {
+	font-size: 20px !important;
+	position: fixed;
+	top: 70px;
+	left: -400px;
+	bottom: 6px;
+	width: 400px;
+	max-height: 100%;
+	overflow: hidden;
+	z-index: 1000000;
+	background-color: #212121;
+}
+
+.menu nav ul {
+	margin: 0;
+	padding: 20px 0;
+	list-style: none;
+}
+
+.menu nav ul li {
+	margin: 0;
+	padding: 0;
+}
+
+.menu nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 10px 20px;
+	padding-left: 120px;
+	-webkit-transform: translateX(0px);
+	transform: translateX(0px);
+	-webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.menu nav ul li a:hover {
+	background: rgba(1,1,1,.3);
+	-webkit-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+/*-- class of show and hide the menu --*/
+.nav_is_visible {
+	transform: translateX(300px);
+}
+
+.nav_is_visible .menu {
+	transform: translateX(-100%);
+}
+
+/*--------------- Upload -----------------------*/
+#drop-files {
+	position: relative;
+	max-width: 750px;
+	height: 140px;
+	margin: 0 auto;
+	background: rgba(0,0,0,0.1);
+	border-radius: 10px;
+	border: 4px dashed rgba(0,0,0,0.2);
+	padding-top: 80px;
+	text-align: center;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#drop-files p {
+	clear: none;
+	padding: 0;
+	margin: 0;
+}
+
+#uploaded-holder {
+	display: none;
+	position: relative;
+	margin: 0 auto;
+}
+
+#dropped-files {
+	display: block;
+	margin: 0 auto;
+	max-width: 950px;
+}
+
+#upload-button {
+	z-index: 9999;
+	display: none;
+	margin: 20px 0;
+}
+
+.drop-button {
+	display: block;
+	position: absolute;
+	z-index: 9999;
+	padding: 5px;
+	width: 100%;
+	background: rgba(0,0,0,0.6);
+	font-size: 1em;
+	bottom: 0;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 700;
+	color: #FFF;
+}
+
+#dropped-files .image {
+	position: relative;
+	height: 200px;
+	width: 300px;
+	border: 4px solid #fff;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+	background: #fff;
+	float: left;
+	border-radius: 4px;
+	margin: 0 7px 7px 0;
+	overflow: hidden;
+}
+
+#upload-button .ss-upload {
+	font-size: 0.7em;
+}
+
+#upload-button a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	box-shadow: 0 0 1000px 62px rgba(255, 255, 255, 1), inset 0 -35px 40px -10px #0A9FCA;
+	font-size: 20px;
+	padding: 10px 20px;
+	background-color: #4bc1e3;
+	border-radius: 10px;
+}
+
+#upload-button span {
+	position: relative;
+	text-align: center;
+	background: white;
+	border-radius: 10px;
+	font-size: 1.1em;
+	padding: 6px;
+	margin-right: 8px;
+}
+
+#upload-button a:hover {
+	box-shadow: 0 0 1000px 62px rgba(255, 255, 255, 1), inset 0 -5px 40px 0px #0A9FCA;
+}
+
+#dropped-files #upload-button .delete {
+	padding: 7px 6px 4px 6px;
+	border-radius: 100px;
+	background: rgba(0,0,0,0.6);
+	box-shadow: none;
+	font-size: 1em;
+	margin-left: 8px;
+}
+
+#dropped-files #upload-button .delete:hover {
+	background: rgba(0,0,0,0.8);
+}
+
+#loading {
+	display: none;
+	width: 100%;
+	position: relative;
+	margin: 20px;
+}
+
+#loading-bar {
+	width: 404px;
+	height: 40px;
+	background: #fff;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	padding: 2px;
+}
+
+.loading-color {
+	width: 0%;
+	height: 100%;
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	-ms-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+	transition: all 0.1s ease-in;
+	border-radius: inherit;
+	background-color: #4edbf1;
+}
+
+#loading-content {
+	position: relative;
+	top: 15px;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	width: 405px;
+}
+
+#file-name-holder {
+	width: 100%;
+	float: left;
+}
+
+#file-name-holder h1 {
+	text-align: center;
+	padding: 20px 0;
+	font-size: 3em;
+	margin: 0;
+}
+
+#uploaded-files {
+	width: 500px;
+	list-style: none;
+	margin: 0 auto;
+	padding: 10px;
+	color: #545454;
+}
+
+#uploaded-files li {
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	font-size: 1.5em;
+	font-weight: bold;
+	line-height: 25px;
+	color: #545454;
+}
+
+#uploaded-files a {
+	color: #1bacbf;
+}
+
+.main {
+	width: 900px;
+	margin: 0 auto;
+	height: 100%;
+	margin-top: 100px;
+}
+
+.main img {
+	position: relative;
+	float: left;
+	width: 280px;
+	height: 180px;
+	margin: 10px;
+}
+
+a.nav {
+	font-family: tahoma;
+	font-size: 20px;
+	color: #4280af;
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+
+a.nav:hover {
+	color: #fffb89;
+}
+
+
+.progress progress[value="0"] + .progress-value:before {
+  content: "0%";
+}
+
+.progress progress[value="0"] ~ .progress-bg .progress-bar {
+  width: 0%;
+}
+
+.progress progress[value="1"] + .progress-value:before {
+  content: "1%";
+}
+
+.progress progress[value="1"] ~ .progress-bg .progress-bar {
+  width: 1%;
+}
+
+.progress progress[value="2"] + .progress-value:before {
+  content: "2%";
+}
+
+.progress progress[value="2"] ~ .progress-bg .progress-bar {
+  width: 2%;
+}
+
+.progress progress[value="3"] + .progress-value:before {
+  content: "3%";
+}
+
+.progress progress[value="3"] ~ .progress-bg .progress-bar {
+  width: 3%;
+}
+
+.progress progress[value="4"] + .progress-value:before {
+  content: "4%";
+}
+
+.progress progress[value="4"] ~ .progress-bg .progress-bar {
+  width: 4%;
+}
+
+.progress progress[value="5"] + .progress-value:before {
+  content: "5%";
+}
+
+.progress progress[value="5"] ~ .progress-bg .progress-bar {
+  width: 5%;
+}
+
+.progress progress[value="6"] + .progress-value:before {
+  content: "6%";
+}
+
+.progress progress[value="6"] ~ .progress-bg .progress-bar {
+  width: 6%;
+}
+
+.progress progress[value="7"] + .progress-value:before {
+  content: "7%";
+}
+
+.progress progress[value="7"] ~ .progress-bg .progress-bar {
+  width: 7%;
+}
+
+.progress progress[value="8"] + .progress-value:before {
+  content: "8%";
+}
+
+.progress progress[value="8"] ~ .progress-bg .progress-bar {
+  width: 8%;
+}
+
+.progress progress[value="9"] + .progress-value:before {
+  content: "9%";
+}
+
+.progress progress[value="9"] ~ .progress-bg .progress-bar {
+  width: 9%;
+}
+
+.progress progress[value="10"] + .progress-value:before {
+  content: "10%";
+}
+
+.progress progress[value="10"] ~ .progress-bg .progress-bar {
+  width: 10%;
+}
+
+.progress progress[value="11"] + .progress-value:before {
+  content: "11%";
+}
+
+.progress progress[value="11"] ~ .progress-bg .progress-bar {
+  width: 11%;
+}
+
+.progress progress[value="12"] + .progress-value:before {
+  content: "12%";
+}
+
+.progress progress[value="12"] ~ .progress-bg .progress-bar {
+  width: 12%;
+}
+
+.progress progress[value="13"] + .progress-value:before {
+  content: "13%";
+}
+
+.progress progress[value="13"] ~ .progress-bg .progress-bar {
+  width: 13%;
+}
+
+.progress progress[value="14"] + .progress-value:before {
+  content: "14%";
+}
+
+.progress progress[value="14"] ~ .progress-bg .progress-bar {
+  width: 14%;
+}
+
+.progress progress[value="15"] + .progress-value:before {
+  content: "15%";
+}
+
+.progress progress[value="15"] ~ .progress-bg .progress-bar {
+  width: 15%;
+}
+
+.progress progress[value="16"] + .progress-value:before {
+  content: "16%";
+}
+
+.progress progress[value="16"] ~ .progress-bg .progress-bar {
+  width: 16%;
+}
+
+.progress progress[value="17"] + .progress-value:before {
+  content: "17%";
+}
+
+.progress progress[value="17"] ~ .progress-bg .progress-bar {
+  width: 17%;
+}
+
+.progress progress[value="18"] + .progress-value:before {
+  content: "18%";
+}
+
+.progress progress[value="18"] ~ .progress-bg .progress-bar {
+  width: 18%;
+}
+
+.progress progress[value="19"] + .progress-value:before {
+  content: "19%";
+}
+
+.progress progress[value="19"] ~ .progress-bg .progress-bar {
+  width: 19%;
+}
+
+.progress progress[value="20"] + .progress-value:before {
+  content: "20%";
+}
+
+.progress progress[value="20"] ~ .progress-bg .progress-bar {
+  width: 20%;
+}
+
+.progress progress[value="21"] + .progress-value:before {
+  content: "21%";
+}
+
+.progress progress[value="21"] ~ .progress-bg .progress-bar {
+  width: 21%;
+}
+
+.progress progress[value="22"] + .progress-value:before {
+  content: "22%";
+}
+
+.progress progress[value="22"] ~ .progress-bg .progress-bar {
+  width: 22%;
+}
+
+.progress progress[value="23"] + .progress-value:before {
+  content: "23%";
+}
+
+.progress progress[value="23"] ~ .progress-bg .progress-bar {
+  width: 23%;
+}
+
+.progress progress[value="24"] + .progress-value:before {
+  content: "24%";
+}
+
+.progress progress[value="24"] ~ .progress-bg .progress-bar {
+  width: 24%;
+}
+
+.progress progress[value="25"] + .progress-value:before {
+  content: "25%";
+}
+
+.progress progress[value="25"] ~ .progress-bg .progress-bar {
+  width: 25%;
+}
+
+.progress progress[value="26"] + .progress-value:before {
+  content: "26%";
+}
+
+.progress progress[value="26"] ~ .progress-bg .progress-bar {
+  width: 26%;
+}
+
+.progress progress[value="27"] + .progress-value:before {
+  content: "27%";
+}
+
+.progress progress[value="27"] ~ .progress-bg .progress-bar {
+  width: 27%;
+}
+
+.progress progress[value="28"] + .progress-value:before {
+  content: "28%";
+}
+
+.progress progress[value="28"] ~ .progress-bg .progress-bar {
+  width: 28%;
+}
+
+.progress progress[value="29"] + .progress-value:before {
+  content: "29%";
+}
+
+.progress progress[value="29"] ~ .progress-bg .progress-bar {
+  width: 29%;
+}
+
+.progress progress[value="30"] + .progress-value:before {
+  content: "30%";
+}
+
+.progress progress[value="30"] ~ .progress-bg .progress-bar {
+  width: 30%;
+}
+
+.progress progress[value="31"] + .progress-value:before {
+  content: "31%";
+}
+
+.progress progress[value="31"] ~ .progress-bg .progress-bar {
+  width: 31%;
+}
+
+.progress progress[value="32"] + .progress-value:before {
+  content: "32%";
+}
+
+.progress progress[value="32"] ~ .progress-bg .progress-bar {
+  width: 32%;
+}
+
+.progress progress[value="33"] + .progress-value:before {
+  content: "33%";
+}
+
+.progress progress[value="33"] ~ .progress-bg .progress-bar {
+  width: 33%;
+}
+
+.progress progress[value="34"] + .progress-value:before {
+  content: "34%";
+}
+
+.progress progress[value="34"] ~ .progress-bg .progress-bar {
+  width: 34%;
+}
+
+.progress progress[value="35"] + .progress-value:before {
+  content: "35%";
+}
+
+.progress progress[value="35"] ~ .progress-bg .progress-bar {
+  width: 35%;
+}
+
+.progress progress[value="36"] + .progress-value:before {
+  content: "36%";
+}
+
+.progress progress[value="36"] ~ .progress-bg .progress-bar {
+  width: 36%;
+}
+
+.progress progress[value="37"] + .progress-value:before {
+  content: "37%";
+}
+
+.progress progress[value="37"] ~ .progress-bg .progress-bar {
+  width: 37%;
+}
+
+.progress progress[value="38"] + .progress-value:before {
+  content: "38%";
+}
+
+.progress progress[value="38"] ~ .progress-bg .progress-bar {
+  width: 38%;
+}
+
+.progress progress[value="39"] + .progress-value:before {
+  content: "39%";
+}
+
+.progress progress[value="39"] ~ .progress-bg .progress-bar {
+  width: 39%;
+}
+
+.progress progress[value="40"] + .progress-value:before {
+  content: "40%";
+}
+
+.progress progress[value="40"] ~ .progress-bg .progress-bar {
+  width: 40%;
+}
+
+.progress progress[value="41"] + .progress-value:before {
+  content: "41%";
+}
+
+.progress progress[value="41"] ~ .progress-bg .progress-bar {
+  width: 41%;
+}
+
+.progress progress[value="42"] + .progress-value:before {
+  content: "42%";
+}
+
+.progress progress[value="42"] ~ .progress-bg .progress-bar {
+  width: 42%;
+}
+
+.progress progress[value="43"] + .progress-value:before {
+  content: "43%";
+}
+
+.progress progress[value="43"] ~ .progress-bg .progress-bar {
+  width: 43%;
+}
+
+.progress progress[value="44"] + .progress-value:before {
+  content: "44%";
+}
+
+.progress progress[value="44"] ~ .progress-bg .progress-bar {
+  width: 44%;
+}
+
+.progress progress[value="45"] + .progress-value:before {
+  content: "45%";
+}
+
+.progress progress[value="45"] ~ .progress-bg .progress-bar {
+  width: 45%;
+}
+
+.progress progress[value="46"] + .progress-value:before {
+  content: "46%";
+}
+
+.progress progress[value="46"] ~ .progress-bg .progress-bar {
+  width: 46%;
+}
+
+.progress progress[value="47"] + .progress-value:before {
+  content: "47%";
+}
+
+.progress progress[value="47"] ~ .progress-bg .progress-bar {
+  width: 47%;
+}
+
+.progress progress[value="48"] + .progress-value:before {
+  content: "48%";
+}
+
+.progress progress[value="48"] ~ .progress-bg .progress-bar {
+  width: 48%;
+}
+
+.progress progress[value="49"] + .progress-value:before {
+  content: "49%";
+}
+
+.progress progress[value="49"] ~ .progress-bg .progress-bar {
+  width: 49%;
+}
+
+.progress progress[value="50"] + .progress-value:before {
+  content: "50%";
+}
+
+.progress progress[value="50"] ~ .progress-bg .progress-bar {
+  width: 50%;
+}
+
+.progress progress[value="51"] + .progress-value:before {
+  content: "51%";
+}
+
+.progress progress[value="51"] ~ .progress-bg .progress-bar {
+  width: 51%;
+}
+
+.progress progress[value="52"] + .progress-value:before {
+  content: "52%";
+}
+
+.progress progress[value="52"] ~ .progress-bg .progress-bar {
+  width: 52%;
+}
+
+.progress progress[value="53"] + .progress-value:before {
+  content: "53%";
+}
+
+.progress progress[value="53"] ~ .progress-bg .progress-bar {
+  width: 53%;
+}
+
+.progress progress[value="54"] + .progress-value:before {
+  content: "54%";
+}
+
+.progress progress[value="54"] ~ .progress-bg .progress-bar {
+  width: 54%;
+}
+
+.progress progress[value="55"] + .progress-value:before {
+  content: "55%";
+}
+
+.progress progress[value="55"] ~ .progress-bg .progress-bar {
+  width: 55%;
+}
+
+.progress progress[value="56"] + .progress-value:before {
+  content: "56%";
+}
+
+.progress progress[value="56"] ~ .progress-bg .progress-bar {
+  width: 56%;
+}
+
+.progress progress[value="57"] + .progress-value:before {
+  content: "57%";
+}
+
+.progress progress[value="57"] ~ .progress-bg .progress-bar {
+  width: 57%;
+}
+
+.progress progress[value="58"] + .progress-value:before {
+  content: "58%";
+}
+
+.progress progress[value="58"] ~ .progress-bg .progress-bar {
+  width: 58%;
+}
+
+.progress progress[value="59"] + .progress-value:before {
+  content: "59%";
+}
+
+.progress progress[value="59"] ~ .progress-bg .progress-bar {
+  width: 59%;
+}
+
+.progress progress[value="60"] + .progress-value:before {
+  content: "60%";
+}
+
+.progress progress[value="60"] ~ .progress-bg .progress-bar {
+  width: 60%;
+}
+
+.progress progress[value="61"] + .progress-value:before {
+  content: "61%";
+}
+
+.progress progress[value="61"] ~ .progress-bg .progress-bar {
+  width: 61%;
+}
+
+.progress progress[value="62"] + .progress-value:before {
+  content: "62%";
+}
+
+.progress progress[value="62"] ~ .progress-bg .progress-bar {
+  width: 62%;
+}
+
+.progress progress[value="63"] + .progress-value:before {
+  content: "63%";
+}
+
+.progress progress[value="63"] ~ .progress-bg .progress-bar {
+  width: 63%;
+}
+
+.progress progress[value="64"] + .progress-value:before {
+  content: "64%";
+}
+
+.progress progress[value="64"] ~ .progress-bg .progress-bar {
+  width: 64%;
+}
+
+.progress progress[value="65"] + .progress-value:before {
+  content: "65%";
+}
+
+.progress progress[value="65"] ~ .progress-bg .progress-bar {
+  width: 65%;
+}
+
+.progress progress[value="66"] + .progress-value:before {
+  content: "66%";
+}
+
+.progress progress[value="66"] ~ .progress-bg .progress-bar {
+  width: 66%;
+}
+
+.progress progress[value="67"] + .progress-value:before {
+  content: "67%";
+}
+
+.progress progress[value="67"] ~ .progress-bg .progress-bar {
+  width: 67%;
+}
+
+.progress progress[value="68"] + .progress-value:before {
+  content: "68%";
+}
+
+.progress progress[value="68"] ~ .progress-bg .progress-bar {
+  width: 68%;
+}
+
+.progress progress[value="69"] + .progress-value:before {
+  content: "69%";
+}
+
+.progress progress[value="69"] ~ .progress-bg .progress-bar {
+  width: 69%;
+}
+
+.progress progress[value="70"] + .progress-value:before {
+  content: "70%";
+}
+
+.progress progress[value="70"] ~ .progress-bg .progress-bar {
+  width: 70%;
+}
+
+.progress progress[value="71"] + .progress-value:before {
+  content: "71%";
+}
+
+.progress progress[value="71"] ~ .progress-bg .progress-bar {
+  width: 71%;
+}
+
+.progress progress[value="72"] + .progress-value:before {
+  content: "72%";
+}
+
+.progress progress[value="72"] ~ .progress-bg .progress-bar {
+  width: 72%;
+}
+
+.progress progress[value="73"] + .progress-value:before {
+  content: "73%";
+}
+
+.progress progress[value="73"] ~ .progress-bg .progress-bar {
+  width: 73%;
+}
+
+.progress progress[value="74"] + .progress-value:before {
+  content: "74%";
+}
+
+.progress progress[value="74"] ~ .progress-bg .progress-bar {
+  width: 74%;
+}
+
+.progress progress[value="75"] + .progress-value:before {
+  content: "75%";
+}
+
+.progress progress[value="75"] ~ .progress-bg .progress-bar {
+  width: 75%;
+}
+
+.progress progress[value="76"] + .progress-value:before {
+  content: "76%";
+}
+
+.progress progress[value="76"] ~ .progress-bg .progress-bar {
+  width: 76%;
+}
+
+.progress progress[value="77"] + .progress-value:before {
+  content: "77%";
+}
+
+.progress progress[value="77"] ~ .progress-bg .progress-bar {
+  width: 77%;
+}
+
+.progress progress[value="78"] + .progress-value:before {
+  content: "78%";
+}
+
+.progress progress[value="78"] ~ .progress-bg .progress-bar {
+  width: 78%;
+}
+
+.progress progress[value="79"] + .progress-value:before {
+  content: "79%";
+}
+
+.progress progress[value="79"] ~ .progress-bg .progress-bar {
+  width: 79%;
+}
+
+.progress progress[value="80"] + .progress-value:before {
+  content: "80%";
+}
+
+.progress progress[value="80"] ~ .progress-bg .progress-bar {
+  width: 80%;
+}
+
+.progress progress[value="81"] + .progress-value:before {
+  content: "81%";
+}
+
+.progress progress[value="81"] ~ .progress-bg .progress-bar {
+  width: 81%;
+}
+
+.progress progress[value="82"] + .progress-value:before {
+  content: "82%";
+}
+
+.progress progress[value="82"] ~ .progress-bg .progress-bar {
+  width: 82%;
+}
+
+.progress progress[value="83"] + .progress-value:before {
+  content: "83%";
+}
+
+.progress progress[value="83"] ~ .progress-bg .progress-bar {
+  width: 83%;
+}
+
+.progress progress[value="84"] + .progress-value:before {
+  content: "84%";
+}
+
+.progress progress[value="84"] ~ .progress-bg .progress-bar {
+  width: 84%;
+}
+
+.progress progress[value="85"] + .progress-value:before {
+  content: "85%";
+}
+
+.progress progress[value="85"] ~ .progress-bg .progress-bar {
+  width: 85%;
+}
+
+.progress progress[value="86"] + .progress-value:before {
+  content: "86%";
+}
+
+.progress progress[value="86"] ~ .progress-bg .progress-bar {
+  width: 86%;
+}
+
+.progress progress[value="87"] + .progress-value:before {
+  content: "87%";
+}
+
+.progress progress[value="87"] ~ .progress-bg .progress-bar {
+  width: 87%;
+}
+
+.progress progress[value="88"] + .progress-value:before {
+  content: "88%";
+}
+
+.progress progress[value="88"] ~ .progress-bg .progress-bar {
+  width: 88%;
+}
+
+.progress progress[value="89"] + .progress-value:before {
+  content: "89%";
+}
+
+.progress progress[value="89"] ~ .progress-bg .progress-bar {
+  width: 89%;
+}
+
+.progress progress[value="90"] + .progress-value:before {
+  content: "90%";
+}
+
+.progress progress[value="90"] ~ .progress-bg .progress-bar {
+  width: 90%;
+}
+
+.progress progress[value="91"] + .progress-value:before {
+  content: "91%";
+}
+
+.progress progress[value="91"] ~ .progress-bg .progress-bar {
+  width: 91%;
+}
+
+.progress progress[value="92"] + .progress-value:before {
+  content: "92%";
+}
+
+.progress progress[value="92"] ~ .progress-bg .progress-bar {
+  width: 92%;
+}
+
+.progress progress[value="93"] + .progress-value:before {
+  content: "93%";
+}
+
+.progress progress[value="93"] ~ .progress-bg .progress-bar {
+  width: 93%;
+}
+
+.progress progress[value="94"] + .progress-value:before {
+  content: "94%";
+}
+
+.progress progress[value="94"] ~ .progress-bg .progress-bar {
+  width: 94%;
+}
+
+.progress progress[value="95"] + .progress-value:before {
+  content: "95%";
+}
+
+.progress progress[value="95"] ~ .progress-bg .progress-bar {
+  width: 95%;
+}
+
+.progress progress[value="96"] + .progress-value:before {
+  content: "96%";
+}
+
+.progress progress[value="96"] ~ .progress-bg .progress-bar {
+  width: 96%;
+}
+
+.progress progress[value="97"] + .progress-value:before {
+  content: "97%";
+}
+
+.progress progress[value="97"] ~ .progress-bg .progress-bar {
+  width: 97%;
+}
+
+.progress progress[value="98"] + .progress-value:before {
+  content: "98%";
+}
+
+.progress progress[value="98"] ~ .progress-bg .progress-bar {
+  width: 98%;
+}
+
+.progress progress[value="99"] + .progress-value:before {
+  content: "99%";
+}
+
+.progress progress[value="99"] ~ .progress-bg .progress-bar {
+  width: 99%;
+}
+
+.progress progress[value="100"] + .progress-value:before {
+  content: "100%";
+}
+
+.progress progress[value="100"] ~ .progress-bg .progress-bar {
+  width: 100%;
+}
+
+.progress {
+  font: 12px Arial, Tahoma, sans-serif;
+  position: relative;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.progress progress {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  left: -777px;
+}
+
+.progress-value {
+  color: #333;
+  display: block;
+  line-height: 21px;
+  text-align: center;
+}
+
+.progress-bg {
+  background: #e6e9ed;
+  position: relative;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes progress_bar {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -40px 0;
+  }
+}
+
+@-moz-keyframes progress_bar {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -40px 0;
+  }
+}
+
+@keyframes progress_bar {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -40px 0;
+  }
+}
+
+.progress-bar {
+  overflow: hidden;
+  background: #ac92ec;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  -webkit-transition: width 1s linear;
+  -moz-transition: width 1s linear;
+  -ms-transition: width 1s linear;
+  transition: width 1s linear;
+}
+
+.progress-bar:after {
+  -webkit-animation: progress_bar 0.8s linear infinite;
+  -moz-animation: progress_bar 0.8s linear infinite;
+  -ms-animation: progress_bar 0.8s linear infinite;
+  -o-animation: progress_bar 0.8s linear infinite;
+  animation: progress_bar 0.8s linear infinite;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+  background-size: 40px 40px;
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#result {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#result2 {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.example-1 .form-group{padding:1em;margin:1em}
+.example-1 input[type=file]{outline:0;opacity:0;pointer-events:none;user-select:none}
+.example-1 .label{width:120px;border:2px dashed grey;border-radius:5px;display:block;padding:1.2em;transition:border 300ms ease;cursor:pointer;text-align:center}
+.example-1 .label i{display:block;font-size:42px;padding-bottom:16px}
+.example-1 .label i,.example-1 .label .title{color:grey;transition:200ms color}
+.example-1 .label:hover{border:2px solid #000}
+.example-1 .label:hover i,.example-1 .label:hover .title{color:#000}
