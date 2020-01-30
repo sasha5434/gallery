@@ -1,23 +1,26 @@
 # php gallery
 
-simple image and video gallery on PHP
+Really simple image and video gallery on PHP
 
 ### How to install
-create DB from dump in base.sql
-configure public/core/config.php
+Create DB from dump in base.sql
+Root dir is public
+Configure public/core/config.php
 
-for upload video need ffmpeg
+For upload video need install ffmpeg
 ```sh
 $ sudo apt update
 $ sudo apt install ffmpeg
 ```
 
-need enable "shell_exec" php function
+Need enable "shell_exec" PHP function if you disable it in php.ini
+
+Testet on PHP 7.2.24, MySQL 5.7.29
 
 Changelog:
 
 v1.1
-add ReCAPCHA
+add reCAPCHA
 add pages filter for img/video
 
 #### Support
