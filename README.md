@@ -3,9 +3,9 @@
 Really simple image and video gallery on PHP
 
 ### How to install
-Create DB from dump in base.sql
-Root dir is public
-Configure public/core/config.php
+Create DB from dump in base.sql;
+Root dir is public;
+Configure public/core/config.php;
 
 For upload video need install ffmpeg
 ```sh
