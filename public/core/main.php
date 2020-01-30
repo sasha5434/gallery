@@ -6,7 +6,19 @@ $title .= " - Галлерея";
 // Создаем подключение к серверу
 $link = mysqli_connect("$mysql_host", "$mysql_user", "$mysql_password", "$mysql_base");
 // Получаем количество записей таблицы
-$get_count = mysqli_query($link, "SELECT * FROM files");
+$type = "all";
+if (isset($_GET['type'])) {
+	$type = $_GET['type'];
+}
+if ($type == "video") {
+	$get_count = mysqli_query($link, "SELECT * FROM files WHERE type='video'");
+}
+elseif ($type == "image") {
+	$get_count = mysqli_query($link, "SELECT * FROM files WHERE type='image'");
+}
+else {
+	$get_count = mysqli_query($link, "SELECT * FROM files");
+}
 $count_records = mysqli_num_rows($get_count);
 // Получаем количество страниц
 // Делим количество записей на количество новостей на странице
@@ -26,8 +38,16 @@ elseif ($current_page > $num_pages) {
 }
 // вычисляем первый оператор для LIMIT
 $start_from = ($current_page - 1) * $per_page;
-// Запрос на выборку всех данных
-$result = mysqli_query($link, "SELECT * FROM files ORDER BY id DESC LIMIT $start_from, $per_page");
+// Запросы на выборку данных
+if ($type == "video") {
+	$result = mysqli_query($link, "SELECT * FROM files WHERE type='video' ORDER BY id DESC LIMIT $start_from, $per_page");
+}
+elseif ($type == "image") {
+	$result = mysqli_query($link, "SELECT * FROM files WHERE type='image' ORDER BY id DESC LIMIT $start_from, $per_page");
+}
+else {
+	$result = mysqli_query($link, "SELECT * FROM files ORDER BY id DESC LIMIT $start_from, $per_page");
+}
 if (!$result) {
 	$content = "Произошла ошибка подключения к серверу и БД, проверьте параметры полключения";
 }
@@ -60,7 +80,15 @@ if (mysqli_num_rows($result) > 0) {
 			$pages .= $page . " ";
 		}
 		else {
-			$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '">' . $page . '</a>' . " ";
+			if ($type == "video") {
+				$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?type=video&page=' . $page . '">' . $page . '</a>' . " ";
+			}
+			elseif ($type == "image") {
+				$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?type=image&page=' . $page . '">' . $page . '</a>' . " ";
+			}
+			else {
+				$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '">' . $page . '</a>' . " ";
+			}
 		}
 	}
 	$parse->get_tpl(DESIGN_DIR . '/page.tpl');

@@ -86,7 +86,7 @@
 				  		var randomName = response.split('%@').pop();
 				  		randomName = randomName.split('@%').shift();
 						var convStatusURL = "/?do=upl&method=status&file=" + randomName;
-						convStatusUpdate = setInterval(readTextFile, 5000, convStatusURL);
+						convStatusUpdate = setInterval(readTextFile, 2000, convStatusURL);
 					};
 				}
 				</script>

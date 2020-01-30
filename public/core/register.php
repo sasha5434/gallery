@@ -31,6 +31,20 @@ if ($user_login == "NOT LOGIN") {
 		if (!preg_match('/^([a-zA-Z0-9])(\w|-|_)+([a-z0-9])$/is', $_POST['password'])) {
 			$err[] = "Пароль может состоять только из букв английского алфавита и цифр";
 		}
+		/*СОЗДАЕМ ФУНКЦИЮ КОТОРАЯ ДЕЛАЕТ ЗАПРОС НА GOOGLE СЕРВИС*/
+		function getCaptcha($SecretKey, $reSecretKey) {
+			$Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $reSecretKey . "&response={$SecretKey}");
+			$Return = json_decode($Response);
+			return $Return;
+		}
+		/*ПРОИЗВОДИМ ЗАПРОС НА GOOGLE СЕРВИС И ЗАПИСЫВАЕМ ОТВЕТ*/
+		$Return = getCaptcha($_POST['g-recaptcha-response'], $reSecretKey);
+		/*ЕСЛИ ЗАПРОС УДАЧНО ОТПРАВЛЕН И ЗНАЧЕНИЕ score БОЛЬШЕ 0,5 ВЫПОЛНЯЕМ КОД*/
+		if ($Return->success == true && $Return->score > 0.5) {
+		}
+		else {
+			$err[] = "You are Robot";
+		}
 		// проверяем, не сущестует ли пользователя с таким именем
 		$query = mysqli_query($link, "SELECT user_id FROM users WHERE user_login='" . mysqli_real_escape_string($link, $_POST['login']) . "'");
 		if (mysqli_num_rows($query) > 0) {
@@ -61,6 +75,7 @@ if ($user_login == "NOT LOGIN") {
 	}
 	$parse->get_tpl(DESIGN_DIR . '/reg.tpl');
 	$parse->set_tpl('{errors}', $errors);
+	$parse->set_tpl('{reSiteKey}', $reSiteKey);
 	$parse->tpl_parse();
 	$content = $parse->template;
 }

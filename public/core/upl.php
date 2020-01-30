@@ -182,9 +182,10 @@ else {
 								mysqli_query($link, "INSERT INTO queue SET file = '$randomName', percentage = '0'");
 								imagejpeg($dimg, $upload_video_prev_thumb_dir . $target_name_prev, 100);
 								imagejpeg($simg, $upload_video_prev_dir . $target_name_prev, 100);
+								shell_exec('php ' . $sitedir . 'ffmpeg-converter.php ' . $randomName . ' > /dev/null &');
 								imagedestroy($dimg);
 								imagedestroy($simg);
-								shell_exec('php ' . $sitedir . 'ffmpeg-converter.php ' . $randomName . ' > /dev/null &');
+								unlink($sitedir . $tmpdir . "frame.jpg");								
 								echo "<!-- %@" . $randomName . "@% -->Успешная загрузка видео - " . $_FILES["video"]["name"] . "<br/>Поставлено в очередь на обработку.";
 							}
 							else {

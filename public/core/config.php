@@ -30,4 +30,8 @@ $videoBitrate = "1536";
 $audioChannels = "2";
 $audioBitrate = "128";
 $audioCodec = "libmp3lame";
+
+//Google ReCAPTCHA v3
+$reSiteKey = "!!!!!!!!!!!!!!!!!!!";
+$reSecretKey = "!!!!!!!!!!!!!!!!!!";
 ?>
