@@ -2,7 +2,7 @@
 if (!defined('DONTHACKME')) {
 	die("Dont hack me!");
 }
-$title .= " - Загрузка файлов";
+$config['title'] .= " - Загрузка файлов";
 if ($user_login == "NOT LOGIN") {
 	$content = "<br /> <font size='5'>Cначала авторизуйтесь на сайте!</font> <br />";
 }

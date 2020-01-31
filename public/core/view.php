@@ -2,9 +2,9 @@
 if (!defined('DONTHACKME')) {
 	die("Dont hack me!");
 }
-$title .= " - Галлерея";
+$config['title'] .= " - Галлерея";
 // Создаем подключение к серверу
-$link = mysqli_connect("$mysql_host", "$mysql_user", "$mysql_password", "$mysql_base");
+$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 // Получаем количество записей таблицы
 $get_count = mysqli_query($link, "SELECT * FROM files");
 if ($get_count) {
@@ -21,9 +21,9 @@ if ($get_count) {
 
 			if ($myrow['type'] == "video") {
 				$parse->get_tpl(DESIGN_DIR . '/video.tpl');
-				$parse->set_tpl('{link}', $upload_video_dir . $myrow['filename'] . ".mp4");
-				$parse->set_tpl('{prev}', $upload_video_prev_dir . $myrow['filename'] . ".jpg");
-				$parse->set_tpl('{thumb}', $upload_video_prev_thumb_dir . $myrow['filename'] . ".jpg");
+				$parse->set_tpl('{link}', $config['uploadVideoDir'] . $myrow['filename'] . ".mp4");
+				$parse->set_tpl('{prev}', $config['uploadVideoPrevDir'] . $myrow['filename'] . ".jpg");
+				$parse->set_tpl('{thumb}', $config['uploadVideoPrevThumbDir'] . $myrow['filename'] . ".jpg");
 				$parse->set_tpl('{date}', $myrow['date']);
 				$parse->set_tpl('{user}', $data['user_login']);
 				$parse->set_tpl('{userlink}', "/?do=user&id=" . $myrow['user_id']);
@@ -33,8 +33,8 @@ if ($get_count) {
 			}
 			else {
 				$parse->get_tpl(DESIGN_DIR . '/view.tpl');
-				$parse->set_tpl('{link}', $uploaddir . $myrow['filename'] . ".jpg");
-				$parse->set_tpl('{img}', $uploaddir . $myrow['filename'] . ".jpg");
+				$parse->set_tpl('{link}', $config['uploadDir'] . $myrow['filename'] . ".jpg");
+				$parse->set_tpl('{img}', $config['uploadDir'] . $myrow['filename'] . ".jpg");
 				$parse->set_tpl('{date}', $myrow['date']);
 				$parse->set_tpl('{user}', $data['user_login']);
 				$parse->set_tpl('{userlink}', "/?do=user&id=" . $myrow['user_id']);

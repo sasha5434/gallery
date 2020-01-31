@@ -59,7 +59,7 @@ if ($printcontent == "1") {
 	// считываем данные из шаблона
 	$parse->get_tpl(DESIGN_DIR . '/main.tpl');
 	// заменяем переменные из шаблона на полученные данные
-	$parse->set_tpl('{title}', $title);
+	$parse->set_tpl('{title}', $config['title']);
 	$parse->set_tpl('{content}', $content);
 	$parse->set_tpl('{login}', $echoLogin);
 	$parse->tpl_parse(); // Собираем страничку

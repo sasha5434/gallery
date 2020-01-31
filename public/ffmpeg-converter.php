@@ -3,7 +3,7 @@ define ( 'DONTHACKME', true );
 $rootPath = __DIR__ . '/..';
 $vendorPath = $rootPath . '/vendor';
 require_once 'core/config.php';
-$link = mysqli_connect("$mysql_host", "$mysql_user", "$mysql_password", "$mysql_base");
+$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 $result = mysqli_query($link, "SELECT * FROM queue WHERE percentage='0'");
 if (!$result) {
     $content = "Произошла ошибка подключения к серверу и БД, проверьте параметры полключения";
@@ -19,18 +19,18 @@ if (mysqli_num_rows($result) > 0)
     }
     require $vendorPath . '/autoload.php';
     $ffmpeg = FFMpeg\FFMpeg::create();
-    $video = $ffmpeg->open($sitedir . $tmpdir . $file . ".mp4");
+    $video = $ffmpeg->open($config['siteDir'] . $config['tmpDir'] . $file . ".mp4");
     $video->filters()
-        ->resize(new FFMpeg\Coordinate\Dimension($videoWidth, $videoHeight))
+        ->resize(new FFMpeg\Coordinate\Dimension($config['videoWidth'], $config['videoHeight']))
         ->synchronize();
     $format = new FFMpeg\Format\Video\X264();
     $format->on('progress', function ($video, $format, $percentage) use ($link, $file)
     {
         mysqli_query($link, "UPDATE queue SET percentage = '$percentage' WHERE queue.file = '$file'");
     });
-    $format->setAudioCodec($audioCodec)->setKiloBitrate($videoBitrate)->setAudioChannels($audioChannels)->setAudioKiloBitrate($audioBitrate);
-    $video->save($format, $sitedir . $upload_video_dir . $file . ".mp4");
-    unlink($sitedir . $tmpdir . $file . ".mp4");
+    $format->setAudioCodec($config['audioCodec'])->setKiloBitrate($config['videoBitrate'])->setAudioChannels($config['audioChannels'])->setAudioKiloBitrate($config['audioBitrate']);
+    $video->save($format, $config['siteDir'] . $config['uploadVideoDir'] . $file . ".mp4");
+    unlink($config['siteDir'] . $config['tmpDir'] . $file . ".mp4");
     mysqli_query($link, "DELETE FROM queue WHERE queue.file =  '$file'");
 }
 ?>

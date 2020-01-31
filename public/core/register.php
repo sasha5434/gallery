@@ -6,7 +6,7 @@ $errors = " ";
 // Страница регистрации нового пользователя
 if ($user_login == "NOT LOGIN") {
 	// Соединямся с БД
-	$link = mysqli_connect("$mysql_host", "$mysql_user", "$mysql_password", "$mysql_base");
+	$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 	if (isset($_POST['submit'])) {
 		$err = [];
 		// проверям логин
@@ -38,7 +38,7 @@ if ($user_login == "NOT LOGIN") {
 			return $Return;
 		}
 		/*ПРОИЗВОДИМ ЗАПРОС НА GOOGLE СЕРВИС И ЗАПИСЫВАЕМ ОТВЕТ*/
-		$Return = getCaptcha($_POST['g-recaptcha-response'], $reSecretKey);
+		$Return = getCaptcha($_POST['g-recaptcha-response'], $config['reSecretKey']);
 		/*ЕСЛИ ЗАПРОС УДАЧНО ОТПРАВЛЕН И ЗНАЧЕНИЕ score БОЛЬШЕ 0,5 ВЫПОЛНЯЕМ КОД*/
 		if ($Return->success == true && $Return->score > 0.5) {
 		}
@@ -75,7 +75,7 @@ if ($user_login == "NOT LOGIN") {
 	}
 	$parse->get_tpl(DESIGN_DIR . '/reg.tpl');
 	$parse->set_tpl('{errors}', $errors);
-	$parse->set_tpl('{reSiteKey}', $reSiteKey);
+	$parse->set_tpl('{reSiteKey}', $config['reSiteKey']);
 	$parse->tpl_parse();
 	$content = $parse->template;
 }

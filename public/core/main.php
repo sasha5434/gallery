@@ -2,9 +2,9 @@
 if (!defined('DONTHACKME')) {
 	die("Dont hack me!");
 }
-$title .= " - Галлерея";
+$config['title'] .= " - Галлерея";
 // Создаем подключение к серверу
-$link = mysqli_connect("$mysql_host", "$mysql_user", "$mysql_password", "$mysql_base");
+$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 // Получаем количество записей таблицы
 $type = "all";
 if (isset($_GET['type'])) {
@@ -23,7 +23,7 @@ $count_records = mysqli_num_rows($get_count);
 // Получаем количество страниц
 // Делим количество записей на количество новостей на странице
 // и округляем в большую сторону
-$num_pages = ceil($count_records / $per_page);
+$num_pages = ceil($count_records / $config['perPage']);
 // Текущая страница из GET-параметра page
 // Если параметр не определен, то текущая страница равна 1
 $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -37,16 +37,16 @@ elseif ($current_page > $num_pages) {
 	$current_page = $num_pages;
 }
 // вычисляем первый оператор для LIMIT
-$start_from = ($current_page - 1) * $per_page;
+$start_from = ($current_page - 1) * $config['perPage'];
 // Запросы на выборку данных
 if ($type == "video") {
-	$result = mysqli_query($link, "SELECT * FROM files WHERE type='video' ORDER BY id DESC LIMIT $start_from, $per_page");
+	$result = mysqli_query($link, "SELECT * FROM files WHERE type='video' ORDER BY id DESC LIMIT $start_from, ".(int)$config['perPage']);
 }
 elseif ($type == "image") {
-	$result = mysqli_query($link, "SELECT * FROM files WHERE type='image' ORDER BY id DESC LIMIT $start_from, $per_page");
+	$result = mysqli_query($link, "SELECT * FROM files WHERE type='image' ORDER BY id DESC LIMIT $start_from, ".(int)$config['perPage']);
 }
 else {
-	$result = mysqli_query($link, "SELECT * FROM files ORDER BY id DESC LIMIT $start_from, $per_page");
+	$result = mysqli_query($link, "SELECT * FROM files ORDER BY id DESC LIMIT $start_from, ".(int)$config['perPage']);
 }
 if (!$result) {
 	$content = "Произошла ошибка подключения к серверу и БД, проверьте параметры полключения";
@@ -62,11 +62,11 @@ if (mysqli_num_rows($result) > 0) {
 		$parse->get_tpl(DESIGN_DIR . '/image_block.tpl');
 		$parse->set_tpl('{link}', "/?do=view&amp;id=" . $myrow['id']);
 		if ($myrow['type'] == "video") {
-			$parse->set_tpl('{thumb}', $upload_video_prev_thumb_dir . $myrow['filename'] . ".jpg");
+			$parse->set_tpl('{thumb}', $config['uploadVideoPrevThumbDir'] . $myrow['filename'] . ".jpg");
 			$parse->set_tpl('{is_video}', "<div class='overley'></div>");
 		}
 		else {
-			$parse->set_tpl('{thumb}', $thumbdir . $myrow['filename'] . ".jpg");
+			$parse->set_tpl('{thumb}', $config['thumbDir'] . $myrow['filename'] . ".jpg");
 			$parse->set_tpl('{is_video}', " ");
 		}
 		$parse->set_tpl('{date}', $myrow['date']);

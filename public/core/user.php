@@ -3,7 +3,7 @@ if (!defined('DONTHACKME')) {
 	die("Dont hack me!");
 }
 // Создаем подключение к серверу
-$link = mysqli_connect("$mysql_host", "$mysql_user", "$mysql_password", "$mysql_base");
+$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 // Получаем количество записей таблицы
 $get_count = mysqli_query($link, "SELECT * FROM users");
 if ($get_count) {
@@ -43,5 +43,5 @@ if ($get_count) {
 else {
 	$content = "MySQL error!!! (1)";
 }
-$title .= " - Просмотр профиля пользователя " . $myrow['user_login'];
+$config['title'] .= " - Просмотр профиля пользователя " . $myrow['user_login'];
 ?>
