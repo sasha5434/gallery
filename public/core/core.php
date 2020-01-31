@@ -47,6 +47,11 @@ if (isset($_GET['do'])) {
 			$printcontent = "1";
 		break;
 
+		case "config":
+			include CORE_DIR . '/configure.php';
+			$printcontent = "1";
+		break;
+
 	}
 }
 else {
@@ -55,6 +60,12 @@ else {
 }
 // выводим шаблон, только когда он нужен
 if ($printcontent == "1") {
+	if ($user_login == $config['adminLogin']) {
+		$admLink = "<li> <a href=\"/?do=config\">Настройка сайта</a> </li>";
+	}
+	else {
+		$admLink = " ";
+	}
 	// не выводим шаблон, когда он не нужен
 	// считываем данные из шаблона
 	$parse->get_tpl(DESIGN_DIR . '/main.tpl');
@@ -62,6 +73,7 @@ if ($printcontent == "1") {
 	$parse->set_tpl('{title}', $config['title']);
 	$parse->set_tpl('{content}', $content);
 	$parse->set_tpl('{login}', $echoLogin);
+	$parse->set_tpl('{admLink}', $admLink);
 	$parse->tpl_parse(); // Собираем страничку
 	echo $parse->template; // Выводим страничку
 	

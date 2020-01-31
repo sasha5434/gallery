@@ -21,6 +21,13 @@ Testet on PHP 7.2.24, MySQL 5.7.29
 
 #### Changelog:
 
+v1.3
+
+Admin can edit config from site
+
+add your login in config file manually
+
+
 v1.1
 
 add reCAPCHA

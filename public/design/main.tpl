@@ -33,6 +33,7 @@
 						<li> <a href="/index.php?type=video">Видео</a> </li>
 						<li> <a href="/?do=upload">Загрузить изображение</a> </li>
 						<li> <a href="/?do=upload&amp;method=video">Загрузить видео</a> </li>
+						{admLink}
 					</ul>
 				</nav>
 			</div>
