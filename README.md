@@ -36,3 +36,5 @@ add pages filter for img/video
 
 #### Support:
 You can ask me on Issues
+
+### Please dont use for create porn site!
