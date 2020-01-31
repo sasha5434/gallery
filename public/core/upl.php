@@ -213,8 +213,9 @@ else {
 					$file = $_GET['file'];
 					// Создаем подключение к серверу
 					$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
-					$myrow = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM queue WHERE file = '$file'"));
-					if ($percentage = $myrow['percentage']) {
+					
+					if ($myrow = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM queue WHERE file = '$file'"))) {
+						$percentage = $myrow['percentage'];
 						echo $percentage;
 					}
 					else {
