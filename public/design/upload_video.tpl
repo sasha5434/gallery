@@ -5,7 +5,7 @@
 				  <div class="form-group">
 				    <label class="label">
 				      <i class="material-icons">attach_file</i>
-				      <span class="title">Добавить файл</span>
+				      <span class="title js-value">Добавить файл</span>
 				      <input type="file" name="video">
 				    </label>
 				  </div>

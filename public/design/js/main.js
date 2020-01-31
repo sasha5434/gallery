@@ -24,17 +24,11 @@ $(function() {
     }
 });
 
-
-
-/**
- * видео плеер
- */
-var v = document.getElementById("movie");
-document.getElementById("movie").volume = 0.5;
-v.onclick = function() {
-    if (v.paused) {
-        v.play();
-    } else {
-        v.pause();
-    }
-};
+$(document).ready(function() {
+ 
+    $('input[type="file"]').change(function(){
+        var value = $("input[type='file']").val();
+        $('.js-value').text(value);
+    });
+ 
+});

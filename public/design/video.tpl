@@ -10,3 +10,14 @@
 				</div>
 				<br />
 				<div class="page-block"> <a href="/#" onclick="javascript:history.back(); return false;">Назад</a> </div>
+				<script>
+					var v = document.getElementById("movie");
+					document.getElementById("movie").volume = 0.5;
+					v.onclick = function() {
+					    if (v.paused) {
+					        v.play();
+					    } else {
+					        v.pause();
+					    }
+					};
+				</script>
