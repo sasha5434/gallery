@@ -1,6 +1,6 @@
 <?php
 if (!defined('DONTHACKME')) {
-	die("Dont hack me!");
+	die('Dont hack me!');
 }
 if ($user_login == $config['adminLogin']) {
 
@@ -31,16 +31,16 @@ if ($user_login == $config['adminLogin']) {
 	$config['reSecretKey'] = $_POST['reSecretKey'];
 	function writeConfig($config = array()) {
 	    $arrayAsString = var_export($config, true);
-	    $string = "<?php\n";
+	    $string = '<?php\n';
 	    $string .= "if (!defined('DONTHACKME')) {\n";
-	    $string .= "	die(\"Dont hack me!\");\n";
-		$string .= "}\n";
+	    $string .= "	die('Dont hack me!');\n";
+		$string .= '}\n';
 	    $string .= "\$config = $arrayAsString;\n";
-	    $string .= "?>\n";
+	    $string .= '?>\n';
 	    file_put_contents(CORE_DIR . '/config.php', $string);
 	}
 	$write = writeConfig($config);
-	$content = "<h2>Конфигурация сохранена!</h2>";
+	$content = '<h2>Конфигурация сохранена!</h2>';
 }
 else {
 	$parse->get_tpl(DESIGN_DIR . '/config.tpl');
@@ -74,7 +74,7 @@ else {
 
 }
 else {
-	$content = "<br /> <div style=\"font-size: 24px;\">Вы не админ! Вы не вошли или вашего логина нет в конфиге.</div> <br />";
+	$content = '<br /> <div style="font-size: 24px;">Вы не админ! Вы не вошли или вашего логина нет в конфиге.</div> <br />';
 
 }
 ?>

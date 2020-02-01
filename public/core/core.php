@@ -1,6 +1,6 @@
 <?php
 if (!defined('DONTHACKME')) {
-	die("Dont hack me!");
+	die('Dont hack me!');
 }
 @include (CORE_DIR . '/config.php');
 
@@ -8,63 +8,63 @@ if (!defined('DONTHACKME')) {
 
 @include (CORE_DIR . '/design.php');
 
-$printcontent = "1";
+$printcontent = '1';
 if (isset($_GET['do'])) {
 	$do = $_GET['do'];
 	switch ($do) {
-		case "reg":
+		case 'reg':
 			include CORE_DIR . '/register.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
-		case "login":
+		case 'login':
 			include CORE_DIR . '/login.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
-		case "upl":
+		case 'upl':
 			include CORE_DIR . '/upl.php';
-			$printcontent = "0";
+			$printcontent = '0';
 		break;
 
-		case "upload":
+		case 'upload':
 			include CORE_DIR . '/upload.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
-		case "main":
+		case 'main':
 			include CORE_DIR . '/main.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
-		case "view":
+		case 'view':
 			include CORE_DIR . '/view.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
-		case "user":
+		case 'user':
 			include CORE_DIR . '/user.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
-		case "config":
+		case 'config':
 			include CORE_DIR . '/configure.php';
-			$printcontent = "1";
+			$printcontent = '1';
 		break;
 
 	}
 }
 else {
-	$printcontent = "1";
+	$printcontent = '1';
 	@include (CORE_DIR . '/main.php');
 }
 // выводим шаблон, только когда он нужен
-if ($printcontent == "1") {
+if ($printcontent == '1') {
 	if ($user_login == $config['adminLogin']) {
-		$admLink = "<li> <a href=\"/?do=config\">Настройка сайта</a> </li>";
+		$admLink = '<li> <a href="/?do=config">Настройка сайта</a> </li>';
 	}
 	else {
-		$admLink = " ";
+		$admLink = ' ';
 	}
 	// не выводим шаблон, когда он не нужен
 	// считываем данные из шаблона

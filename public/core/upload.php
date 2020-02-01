@@ -1,17 +1,17 @@
 <?php
 if (!defined('DONTHACKME')) {
-	die("Dont hack me!");
+	die('Dont hack me!');
 }
-$config['title'] .= " - Загрузка файлов";
-if ($user_login == "NOT LOGIN") {
-	$content = "<br /> <font size='5'>Cначала авторизуйтесь на сайте!</font> <br />";
+$config['title'] .= ' - Загрузка файлов';
+if ($user_login == 'NOT LOGIN') {
+	$content = '<br /> <div style="font-size: 24px;">Cначала авторизуйтесь на сайте!</div> <br />';
 }
 else {
-	$method = "image";
+	$method = 'image';
 	if (isset($_GET['method'])) {
 		$method = $_GET['method'];
 	}
-	if ($method == "video") {
+	if ($method == 'video') {
 		$parse->get_tpl(DESIGN_DIR . '/upload_video.tpl');
 		$parse->tpl_parse();
 		$content = $parse->template;

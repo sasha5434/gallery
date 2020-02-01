@@ -1,6 +1,6 @@
 <?php
 if (!defined('DONTHACKME')) {
-	die("Dont hack me!");
+	die('Dont hack me!');
 }
 $config = array (
   'mysqlHost' => 'localhost',

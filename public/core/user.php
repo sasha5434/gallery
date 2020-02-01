@@ -1,6 +1,6 @@
 <?php
 if (!defined('DONTHACKME')) {
-	die("Dont hack me!");
+	die('Dont hack me!');
 }
 // Создаем подключение к серверу
 $link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
@@ -11,7 +11,7 @@ if ($get_count) {
 	// Текущий id из GET-параметра id
 	// Если параметр не определен, то текущая страница равна 1
 	$view_id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
-	// Если текущая страница меньше единицы, то страница равна 1
+	// Если текущая страница меньше единицы то страница равна 1
 	if ($view_id < 1) {
 		$view_id = 1;
 	}
@@ -33,15 +33,15 @@ if ($get_count) {
 		}
 		else {
 			// Собщение о пустой таблице
-			$content = "<p>Информация по запросу не может быть извлечена, в таблице нет записей.</p>";
+			$content = '<div style="font-size: 24px;">Информация по запросу не может быть извлечена, в таблице нет записей.</div>';
 		}
 	}
 	else {
-		$content = "MySQL error!!! (2)";
+		$content = 'MySQL error!!! (2)';
 	}
 }
 else {
-	$content = "MySQL error!!! (1)";
+	$content = 'MySQL error!!! (1)';
 }
-$config['title'] .= " - Просмотр профиля пользователя " . $myrow['user_login'];
+$config['title'] .= ' - Просмотр профиля пользователя ' . $myrow['user_login'];
 ?>

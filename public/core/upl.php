@@ -1,15 +1,15 @@
 <?php
 if (!defined('DONTHACKME')) {
-	die("Dont hack me!");
+	die('Dont hack me!');
 }
-if ($user_login == "NOT LOGIN") {
-	echo "Сначала авторизуйтесь на сайте! <br />";
+if ($user_login == 'NOT LOGIN') {
+	echo 'Сначала авторизуйтесь на сайте! <br />';
 }
 else {
 	if (isset($_GET['method'])) {
 		$method = $_GET['method'];
 		switch ($method) {
-			case "image":
+			case 'image':
 				set_time_limit(120);
 				// Создаем подключение к серверу
 				$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
@@ -21,14 +21,14 @@ else {
 				$mime = end($getMime);
 				// проверка типа файла
 				$valid_types = array(
-					"gif",
-					"jpg",
-					"jpeg",
-					"png",
-					"GIF",
-					"JPG",
-					"JPEG",
-					"PNG"
+					'gif',
+					'jpg',
+					'jpeg',
+					'png',
+					'GIF',
+					'JPG',
+					'JPEG',
+					'PNG'
 				);
 				if (in_array($mime, $valid_types)) {
 					// Выделим данные
@@ -40,7 +40,7 @@ else {
 					// Мы будем создавать произвольное имя!
 					$randomName = substr_replace(sha1(microtime(true)) , '', 12);
 					// будущее имя файла
-					$target_name = $randomName . ".jpg";
+					$target_name = $randomName . '.jpg';
 					// Создаем изображение на сервере во временной папке
 					if (file_put_contents($config['tmpDir'] . $randomName, $decodedData)) {
 						// обрабаатываем файл во временной папке и создаём миниатюру
@@ -92,54 +92,54 @@ else {
 								imagedestroy($simg);
 							}
 							else {
-								echo "Не удалось загрузить файл <font color='red'>" . $name . "</font>! MySQL error!!!<br />";
+								echo "Не удалось загрузить файл <font color=\"red\">$name</font>! MySQL error!!!<br />";
 								imagedestroy($dimg);
 								imagedestroy($simg);
 							}
 						}
 						else {
-							echo "Ошибка обработки изображения. Убедитесь, что файл <font color='red'>" . $name . "</font> не поврежден!<br />";
+							echo "Ошибка обработки изображения. Убедитесь, что файл <font color=\"red\">$name</font> не поврежден!<br />";
 						}
 						//удаляем временный файл
 						unlink($config['tmpDir'] . $randomName);
 					}
 					else {
-						echo "Ошибка загрузки файла. Убедитесь, что файл " . $name . " не поврежден!<br />";
+						echo "Ошибка загрузки файла. Убедитесь, что файл $name не поврежден!<br />";
 					}
 				}
 				else {
-					echo 'Попытка загрузки запрещённого файла <font color="red">' . $name . '</font>! Можно загружать только jpg, png и gif!<br />';
+					echo "Попытка загрузки запрещённого файла <font color=\"red\">$name</font>! Можно загружать только jpg, png и gif!<br />";
 				}
 			break;
-			case "video":
+			case 'video':
 				$randomName = substr_replace(sha1(microtime(true)) , '', 12);
-				$target_name_vid = $randomName . ".mp4";
-				$target_name_prev = $randomName . ".jpg";
+				$target_name_vid = $randomName . '.mp4';
+				$target_name_prev = $randomName . '.jpg';
 				// Проверяем загружен ли файл
-				if (is_uploaded_file($_FILES["video"]["tmp_name"])) {
-					$name = $_FILES["video"]["name"];
+				if (is_uploaded_file($_FILES['video']['tmp_name'])) {
+					$name = $_FILES['video']['name'];
 					// Получаем расширение файла
 					$getMime = explode('.', $name);
 					$mime = end($getMime);
 					// проферка типаа файла
 					$valid_types = array(
-						"mp4",
-						"MP4",
-						"avi",
-						"AVI",
-						"mkv",
-						"MKV",
-						"wmv",
-						"WMV"
+						'mp4',
+						'MP4',
+						'avi',
+						'AVI',
+						'mkv',
+						'MKV',
+						'wmv',
+						'WMV'
 					);
 					if (in_array($mime, $valid_types)) {
 						require $vendorPath . '/autoload.php';
-						move_uploaded_file($_FILES["video"]["tmp_name"], $config['tmpDir'] . $target_name_vid);
+						move_uploaded_file($_FILES['video']['tmp_name'], $config['tmpDir'] . $target_name_vid);
 						$ffmpeg = FFMpeg\FFMpeg::create();
 						$video = $ffmpeg->open($config['siteDir'] . $config['tmpDir'] . $target_name_vid);
 						$video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(13))
-							->save($config['tmpDir'] . "frame.jpg");
-						$put_file = $config['tmpDir'] . "frame.jpg";
+							->save($config['tmpDir'] . 'frame.jpg');
+						$put_file = $config['tmpDir'] . 'frame.jpg';
 						if ($size = getimagesize($put_file)) {
 							$w = $size[0]; // Ширина изображения
 							$h = $size[1]; // Высота изображения
@@ -185,7 +185,7 @@ else {
 								shell_exec('php ' . $config['siteDir'] . 'ffmpeg-converter.php ' . $randomName . ' > /dev/null &');
 								imagedestroy($dimg);
 								imagedestroy($simg);
-								unlink($config['siteDir'] . $config['tmpDir'] . "frame.jpg");								
+								unlink($config['siteDir'] . $config['tmpDir'] . 'frame.jpg');								
 								echo "<!-- %@" . $randomName . "@% -->Успешная загрузка видео - " . $_FILES["video"]["name"] . "<br/>Поставлено в очередь на обработку.";
 							}
 							else {
@@ -195,20 +195,20 @@ else {
 							}
 						}
 						else {
-							echo "Ошибка обработки изображения миниатюры!<br />";
+							echo 'Ошибка обработки изображения миниатюры!<br />';
 						}
 
 					}
 					else {
 
-						echo "Попытка загрузки запрещённого файла! Можно загружать только видео в формате mp4!<br />";
+						echo 'Попытка загрузки запрещённого файла! Можно загружать только видео в формате mp4!<br />';
 					}
 				}
 				else {
-					echo "Ошибка загрузки видео файла - возможно он не выбран";
+					echo 'Ошибка загрузки видео файла - возможно он не выбран';
 				}
 			break;
-			case "status":
+			case 'status':
 				if (isset($_GET['file'])) {
 					$file = $_GET['file'];
 					// Создаем подключение к серверу
@@ -219,7 +219,7 @@ else {
 						echo $percentage;
 					}
 					else {
-						echo "100";
+						echo '100';
 					}
 				}
 			break;
