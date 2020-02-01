@@ -81,13 +81,13 @@ if (mysqli_num_rows($result) > 0) {
 		}
 		else {
 			if ($type == "video") {
-				$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?type=video&page=' . $page . '">' . $page . '</a>' . " ";
+				$pages .= '<a href="/?type=video&page=' . $page . '">' . $page . '</a>' . " ";
 			}
 			elseif ($type == "image") {
-				$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?type=image&page=' . $page . '">' . $page . '</a>' . " ";
+				$pages .= '<a href="/?type=image&page=' . $page . '">' . $page . '</a>' . " ";
 			}
 			else {
-				$pages .= '<a href="' . $_SERVER['PHP_SELF'] . '?page=' . $page . '">' . $page . '</a>' . " ";
+				$pages .= '<a href="/?page=' . $page . '">' . $page . '</a>' . " ";
 			}
 		}
 	}
