@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="icon" href="/design/image/favicon.ico" type="image/x-icon">
 	<link href="/design/css/style.css" type="text/css" rel="stylesheet">
-	<script type="module" async="async"  src="/design/js/jquery.min.js"></script>
+	<script src="/design/js/jquery.min.js"></script>
 	<script type="module" async="async" src="/design/js/main.js"></script>
 </head>
 
