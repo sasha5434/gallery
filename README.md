@@ -21,6 +21,10 @@ Testet on PHP 7.2.24, MySQL 5.7.29
 
 #### Changelog:
 
+1.4
+Optimization
+Now you can remove posts and change preview for video
+
 v1.3
 
 Admin can edit config from site
