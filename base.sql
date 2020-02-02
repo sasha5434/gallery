@@ -59,8 +59,8 @@ CREATE TABLE `users` (
   `user_reg_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `user_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `user_hash` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `user_ip` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `user_reg_date` date DEFAULT NULL
+  `user_ip` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --

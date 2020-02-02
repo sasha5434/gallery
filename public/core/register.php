@@ -62,9 +62,14 @@ if ($user_login == 'NOT LOGIN') {
 			$errors = ' ';
 			// Убераем лишние пробелы и делаем двойное хеширование
 			$password = md5(md5(trim($_POST['password'])));
-			mysqli_query($link, "INSERT INTO users SET user_login='$user_login', user_password='$password', user_reg_email='$user_email', user_email='$user_email', user_reg_date=  NOW()");
-			header("Location: /?do=login");
-			exit();
+			if(mysqli_query($link, "INSERT INTO users SET user_login='$user_login', user_password='$password', user_reg_email='$user_email', user_email='$user_email'")) {
+				header("Location: /?do=login");
+				exit();
+			}
+			else {
+				$errors = '<b>MySQL error!</b><br />';
+			}
+
 		}
 		else {
 			$errors = '<b>При регистрации произошли следующие ошибки:</b><br />';
