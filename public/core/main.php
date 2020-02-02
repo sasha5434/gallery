@@ -89,7 +89,7 @@ if (mysqli_num_rows($result) > 0) {
 				$pages .= "<a href=\"/?type=video&page={$page}\">{$page}</a> ";
 			}
 			else {
-				$pages .= "<a href=\"/?type=video&page={$page}\">{$page}</a> ";
+				$pages .= "<a href=\"/?page={$page}\">{$page}</a> ";
 			}
 		}
 	}

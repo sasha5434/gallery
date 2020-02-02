@@ -18,6 +18,12 @@ if ($get_count) {
 			$myrow = mysqli_fetch_assoc($result);
 			$query = mysqli_query($link, "SELECT user_login FROM users WHERE user_id='" . $myrow['user_id'] . "' LIMIT 1");
 			$data = mysqli_fetch_assoc($query);
+			if ($user_login == $data['user_login'] or $user_login == $config['adminLogin']) {
+				$editLinks = "Задать превью: <a href=\"?do=action&step=preview&id={$view_id}&seconds=5\">5</a>, <a href=\"?do=action&step=preview&id={$view_id}&seconds=10\">10</a>, <a href=\"?do=action&step=preview&id={$view_id}&seconds=15\">15</a> секунд | <a href=\"/?do=action&step=remove&id={$view_id}\">Удалить</a> |";
+			}
+			else{
+				$editLinks = '';
+			}
 
 			if ($myrow['type'] == 'video') {
 				$parse->get_tpl(DESIGN_DIR . '/video.tpl');
@@ -27,20 +33,22 @@ if ($get_count) {
 				$parse->set_tpl('{date}', $myrow['date']);
 				$parse->set_tpl('{user}', $data['user_login']);
 				$parse->set_tpl('{userlink}', '/?do=user&id=' . $myrow['user_id']);
-
+				$parse->set_tpl('{Links}', $editLinks);
 				$parse->tpl_parse();
 				$content = $parse->template;
 			}
-			else {
+			else if($myrow['type'] == 'image') {
 				$parse->get_tpl(DESIGN_DIR . '/view.tpl');
 				$parse->set_tpl('{link}', $config['uploadDir'] . $myrow['filename'] . '.jpg');
 				$parse->set_tpl('{img}', $config['uploadDir'] . $myrow['filename'] . '.jpg');
 				$parse->set_tpl('{date}', $myrow['date']);
 				$parse->set_tpl('{user}', $data['user_login']);
 				$parse->set_tpl('{userlink}', '/?do=user&id=' . $myrow['user_id']);
+				$parse->set_tpl('{Links}', $editLinks);
 				$parse->tpl_parse();
 				$content = $parse->template;
 			}
+			else {}
 		}
 		else {
 			// Собщение о пустой таблице

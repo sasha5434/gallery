@@ -5,7 +5,7 @@
 				</video>
 					<br />
 					<div class="block-left">{date}</div>
-					<div class="block-right"> <a href="{userlink}">{user}</a></div>
+					<div class="block-right"> {Links} загрузил: <a href="{userlink}">{user}</a></div>
 					<br />
 				</div>
 				<br />

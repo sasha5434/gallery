@@ -51,6 +51,11 @@ if (isset($_GET['do'])) {
 			include CORE_DIR . '/configure.php';
 			$printcontent = '1';
 		break;
+		
+		case 'action':
+			include CORE_DIR . '/action.php';
+			$printcontent = '0';
+		break;
 
 	}
 }
