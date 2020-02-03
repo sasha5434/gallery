@@ -12,7 +12,6 @@ header('Access-Control-Allow-Origin: *');
 define ( 'DONTHACKME', true );
 define ( 'ROOT_DIR', dirname ( __FILE__ ) );
 define ( 'CORE_DIR', ROOT_DIR . '/core' );
-define ( 'DESIGN_DIR', ROOT_DIR . '/design' );
 
 require_once ROOT_DIR . '/core/core.php';
 
