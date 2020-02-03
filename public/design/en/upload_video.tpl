@@ -8,7 +8,7 @@
 					</div>
 				</div>
 				<br>
-				<input type="submit" value="Download" class="btn-auth">
+				<input type="submit" value="Upload" class="btn-auth">
 				<br>
 				</form>
 				<div id="progress" class="progress" style="display: none;">
