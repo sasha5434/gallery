@@ -3,7 +3,7 @@ if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
 if ($user_login == 'NOT LOGIN') {
-	echo 'Сначала авторизуйтесь на сайте! <br />';
+	echo "{$lang['Action-1']} <br />";
 }
 else {
 	$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
@@ -92,30 +92,30 @@ else {
 								}
 
 								else {
-									echo 'Ошибка обработки изображения миниатюры!<br />';
+									echo $lang['Action-2'];
 								}
 							}
 
 							else {
-								echo 'Не правильно задано время кадра';
+								echo $lang['Action-3'];
 							}
 							break;
 						}
 				}
 				else {
-					echo 'нет доступа - вы не хозяин файла или админ';
+					echo $lang['Action-4'];
 				}
 			}
 			else {
-				echo 'id не найден в базе';
+				echo $lang['Action-5'];
 			}
 		}
 		else {
-			echo 'id не задан';
+			echo $lang['Action-6'];
 		}
 	}
 	else {
-		echo 'step не задан';
+		echo $lang['Action-7'];
 	}
 }
 ?>

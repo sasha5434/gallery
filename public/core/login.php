@@ -3,7 +3,7 @@ if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
 $errors = ' ';
-$config['title'] .= ' - Авторизация';
+$config['title'] .= " - {$lang['Login-1']}";
 // Страница авторизации
 // Функция для генерации случайной строки
 function generateCode($length = 6) {
@@ -50,11 +50,11 @@ if (isset($_POST['submit'])) {
 			exit();
 		}
 		else {
-			$errors = 'Вы ввели неправильный логин/пароль <br />';
+			$errors = "{$lang['Login-2']} <br />";
 		}
 	}
 	else {
-		$errors = 'You are Robot <br />';
+		$errors = "{$lang['Login-3']} <br />";
 	}
 }
 $parse->get_tpl(DESIGN_DIR . '/login.tpl');

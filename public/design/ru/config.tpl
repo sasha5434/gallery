@@ -13,6 +13,12 @@
 	<h3>Настроки отображения:</h3>
 	<p><b>* Название сайта:</b>	<input type="text" name="title" size="30" required="required" value="{title}"></p>
 	<p><b>* Блоков в выводе:</b>	<input type="text" name="perPage" size="30" required="required" value="{perPage}"></p>
+	<p><b>* Язык:</b>
+	<select name="lang">
+		<option value="{lang}" hidden=""></option>
+		<option selected="selected" value="ru">Русский</option>
+		<option value="en">English</option>
+	</select></p>
 	<p><b>* Ширина миниатюры:</b>	<input type="text" name="thumbWidth" size="30" required="required" value="{thumbWidth}"></p>
 	<p><b>* Высота миниатюры:</b>	<input type="text" name="thumbHeight" size="30" required="required" value="{thumbHeight}"></p>
 	<hr>

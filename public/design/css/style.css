@@ -1580,3 +1580,8 @@ a.nav:hover {
 	float:right;
 	display: inline;
 }
+
+#config select {
+	float:right;
+	display: inline;
+}

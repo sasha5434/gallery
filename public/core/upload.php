@@ -2,9 +2,9 @@
 if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
-$config['title'] .= ' - Загрузка файлов';
+$config['title'] .= " - {$lang['Upload-15']}";
 if ($user_login == 'NOT LOGIN') {
-	$content = '<br /> <div style="font-size: 24px;">Cначала авторизуйтесь на сайте!</div> <br />';
+	$content = "<br /> <div style=\"font-size: 24px;\">{$lang['Upload-1']}!</div> <br />";
 }
 else {
 	$method = 'image';

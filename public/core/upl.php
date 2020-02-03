@@ -3,7 +3,7 @@ if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
 if ($user_login == 'NOT LOGIN') {
-	echo 'Сначала авторизуйтесь на сайте! <br />';
+	echo "{$lang['Upload-1']}! <br />";
 }
 else {
 	if (isset($_GET['method'])) {
@@ -86,29 +86,29 @@ else {
 							if (mysqli_query($link, "INSERT INTO files SET date = NOW(), user_id = '$user_id', filename = '$randomName', type = 'image'")) {
 								imagejpeg($dimg, $config['thumbDir'] . $target_name, 100);
 								imagejpeg($simg, $config['uploadDir'] . $target_name, 100);
-								echo "Загружен успешно: <a href='" . $config['uploadDir'] . $target_name . "'>" . $name . "</a><br />";
+								echo "{$lang['Upload-2']}: <a href='" . $config['uploadDir'] . $target_name . "'>" . $name . "</a><br />";
 								// освобождаем память
 								imagedestroy($dimg);
 								imagedestroy($simg);
 							}
 							else {
-								echo "Не удалось загрузить файл <font color=\"red\">$name</font>! MySQL error!!!<br />";
+								echo "{$lang['Upload-3']} <font color=\"red\">$name</font>! {$lang['Upload-4']}!<br />";
 								imagedestroy($dimg);
 								imagedestroy($simg);
 							}
 						}
 						else {
-							echo "Ошибка обработки изображения. Убедитесь, что файл <font color=\"red\">$name</font> не поврежден!<br />";
+							echo "{$lang['Upload-5']} <font color=\"red\">$name</font> {$lang['Upload-6']}!<br />";
 						}
 						//удаляем временный файл
 						unlink($config['tmpDir'] . $randomName);
 					}
 					else {
-						echo "Ошибка загрузки файла. Убедитесь, что файл $name не поврежден!<br />";
+						echo "{$lang['Upload-7']} $name  {$lang['Upload-6']}!<br />";
 					}
 				}
 				else {
-					echo "Попытка загрузки запрещённого файла <font color=\"red\">$name</font>! Можно загружать только jpg, png и gif!<br />";
+					echo "{$lang['Upload-8']} <font color=\"red\">$name</font>! {$lang['Upload-9']}!<br />";
 				}
 			break;
 			case 'video':
@@ -186,26 +186,26 @@ else {
 								imagedestroy($dimg);
 								imagedestroy($simg);
 								unlink($config['siteDir'] . $config['tmpDir'] . 'frame.jpg');								
-								echo "<!-- %@" . $randomName . "@% -->Успешная загрузка видео - " . $_FILES["video"]["name"] . "<br/>Поставлено в очередь на обработку.";
+								echo "<!-- %@" . $randomName . "@% -->{$lang['Upload-10']} - " . $_FILES["video"]["name"] . "<br/>{$lang['Upload-11']}.";
 							}
 							else {
-								echo "Не удалось загрузить файл <font color='red'>" . $_FILES["video"]["name"] . "</font>! MySQL error!!!<br />";
+								echo "{$lang['Upload-3']} <font color='red'>" . $_FILES["video"]["name"] . "</font>! {$lang['Upload-4']}!<br />";
 								imagedestroy($dimg);
 								imagedestroy($simg);
 							}
 						}
 						else {
-							echo 'Ошибка обработки изображения миниатюры!<br />';
+							echo "{$lang['Upload-12']}!<br />";
 						}
 
 					}
 					else {
 
-						echo 'Попытка загрузки запрещённого файла! Можно загружать только видео в формате mp4!<br />';
+						echo "{$lang['Upload-13']}!<br />";
 					}
 				}
 				else {
-					echo 'Ошибка загрузки видео файла - возможно он не выбран';
+					echo $lang['Upload-14'];
 				}
 			break;
 			case 'status':

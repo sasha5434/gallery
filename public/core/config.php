@@ -10,6 +10,7 @@ $config = array (
   'adminLogin' => 'Admin',
   'title' => 'Test site',
   'perPage' => '12',
+  'lang' => 'en',
   'thumbWidth' => '320',
   'thumbHeight' => '180',
   'videoWidth' => '1280',

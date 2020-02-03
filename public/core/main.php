@@ -2,7 +2,7 @@
 if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
-$config['title'] .= ' - Галлерея';
+$config['title'] .= " - {$lang['Main-1']}";
 $perPage = $config['perPage'];
 // Создаем подключение к серверу
 $link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
@@ -50,7 +50,7 @@ else {
 	$result = mysqli_query($link, "SELECT * FROM files ORDER BY id DESC LIMIT $start_from, $perPage");
 }
 if (!$result) {
-	$content = 'Произошла ошибка подключения к серверу и БД, проверьте параметры полключения';
+	$content = $lang['Main-2'];
 }
 // Если количество записей больше нуля
 if (mysqli_num_rows($result) > 0) {
@@ -101,6 +101,6 @@ if (mysqli_num_rows($result) > 0) {
 }
 else {
 	// Собщение о пустой таблице
-	$content = '<p>Информация по запросу не может быть извлечена, в таблице нет записей.</p>';
+	$content = "<p>{$lang['Main-3']}.</p>";
 }
 ?>

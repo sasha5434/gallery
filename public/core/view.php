@@ -2,7 +2,7 @@
 if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
-$config['title'] .= ' - Галлерея';
+$config['title'] .= " - {$lang['View-1']}";
 // Создаем подключение к серверу
 $link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 // Получаем количество записей таблицы
@@ -20,10 +20,10 @@ if ($get_count) {
 			$data = mysqli_fetch_assoc($query);
 			if ($user_login == $data['user_login'] or $user_login == $config['adminLogin']) {
 				if ($myrow['type'] == 'video') {
-					$editLinks = "Задать превью: <a href=\"?do=action&step=preview&id={$view_id}&seconds=5\">5</a>, <a href=\"?do=action&step=preview&id={$view_id}&seconds=10\">10</a>, <a href=\"?do=action&step=preview&id={$view_id}&seconds=15\">15</a> секунд | <a href=\"/?do=action&step=remove&id={$view_id}\">Удалить</a> |";
+					$editLinks = "{$lang['View-2']}: <a href=\"?do=action&step=preview&id={$view_id}&seconds=5\">5</a>, <a href=\"?do=action&step=preview&id={$view_id}&seconds=10\">10</a>, <a href=\"?do=action&step=preview&id={$view_id}&seconds=15\">15</a> {$lang['View-6']} | <a href=\"/?do=action&step=remove&id={$view_id}\">{$lang['View-3']}</a> |";
 				}
 				else{
-					$editLinks = "<a href=\"/?do=action&step=remove&id={$view_id}\">Удалить</a> |";
+					$editLinks = "<a href=\"/?do=action&step=remove&id={$view_id}\">{$lang['View-3']}</a> |";
 				}
 			}
 			else{
@@ -57,14 +57,14 @@ if ($get_count) {
 		}
 		else {
 			// Собщение о пустой таблице
-			$content = '<div style="font-size: 24px;">Информация по запросу не может быть извлечена, в таблице нет записей.</div>';
+			$content = "<div style=\"font-size: 24px;\">{$lang['View-4']}.</div>";
 		}
 	}
 	else {
-		$content = 'MySQL error!!! (2)';
+		$content = $lang['View-5'];
 	}
 }
 else {
-	$content = 'MySQL error!!! (1)';
+	$content = $lang['View-5'];
 }
 ?>

@@ -4,6 +4,36 @@ if (!defined('DONTHACKME')) {
 }
 @include (CORE_DIR . '/config.php');
 
+if (isset($_POST['setlang'])) {
+	setcookie("lang", $_POST['setlang']);
+	if ($_POST['setlang'] == 'ru') {
+		define('DESIGN_DIR', ROOT_DIR . '/design' . '/ru');
+		@include (LANG_DIR . '/' . 'ru' . '.php');
+	}
+	else if ($_POST['setlang'] == 'en') {
+		define('DESIGN_DIR', ROOT_DIR . '/design' . '/en');
+		@include (LANG_DIR . '/' . 'en' . '.php');
+	}
+}
+else if (isset($_COOKIE["lang"])) {
+	if ($_COOKIE["lang"] == 'ru') {
+		define('DESIGN_DIR', ROOT_DIR . '/design' . '/ru');
+		@include (LANG_DIR . '/' . 'ru' . '.php');
+	}
+	else if ($_COOKIE["lang"] == 'en') {
+		define('DESIGN_DIR', ROOT_DIR . '/design' . '/en');
+		@include (LANG_DIR . '/' . 'en' . '.php');
+	}
+	else {
+		define('DESIGN_DIR', ROOT_DIR . '/design' . '/' . $config['lang']);
+		@include (LANG_DIR . '/' . $config['lang'] . '.php');
+	}
+}
+else {
+	define('DESIGN_DIR', ROOT_DIR . '/design' . '/' . $config['lang']);
+	@include (LANG_DIR . '/' . $config['lang'] . '.php');
+}
+
 @include (CORE_DIR . '/checkauth.php');
 
 @include (CORE_DIR . '/design.php');
@@ -51,7 +81,7 @@ if (isset($_GET['do'])) {
 			include CORE_DIR . '/configure.php';
 			$printcontent = '1';
 		break;
-		
+
 		case 'action':
 			include CORE_DIR . '/action.php';
 			$printcontent = '0';
@@ -63,10 +93,11 @@ else {
 	$printcontent = '1';
 	@include (CORE_DIR . '/main.php');
 }
+
 // выводим шаблон, только когда он нужен
 if ($printcontent == '1') {
 	if ($user_login == $config['adminLogin']) {
-		$admLink = '<li> <a href="/?do=config">Настройка сайта</a> </li>';
+		$admLink = "<li> <a href=\"/?do=config\">{$lang['Core-1']}</a> </li>";
 	}
 	else {
 		$admLink = ' ';

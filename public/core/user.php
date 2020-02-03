@@ -33,15 +33,15 @@ if ($get_count) {
 		}
 		else {
 			// Собщение о пустой таблице
-			$content = '<div style="font-size: 24px;">Информация по запросу не может быть извлечена, в таблице нет записей.</div>';
+			$content = "<div style=\"font-size: 24px;\">{$lang['User-1']}.</div>";
 		}
 	}
 	else {
-		$content = 'MySQL error!!! (2)';
+		$content = $lang['User-2'];
 	}
 }
 else {
-	$content = 'MySQL error!!! (1)';
+	$content = $lang['User-2'];
 }
-$config['title'] .= ' - Просмотр профиля пользователя ' . $myrow['user_login'];
+$config['title'] .= " - {$lang['User-3']} " . $myrow['user_login'];
 ?>

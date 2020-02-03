@@ -45,7 +45,14 @@
 		</div>
 	</div>
 	<div class="footer">
-		<div class="left-block"> </div>
+		<div class="left-block">
+			<form method="POST">
+				<p>Язык: <select name="setlang" onchange="this.form.submit()">
+					<option selected="selected" value="ru">Русский</option>
+					<option value="en">English</option>
+				</select></p>
+			</form>
+		</div>
 		<div class="right-block">
 			<p>© Aleksandr Modenov - 2018</p>
 		</div>

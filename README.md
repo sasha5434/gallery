@@ -21,6 +21,10 @@ Testet on PHP 7.2.24, MySQL 5.7.29
 
 #### Changelog:
 
+v1.5
+
+add language select system
+
 v1.4
 
 Optimization

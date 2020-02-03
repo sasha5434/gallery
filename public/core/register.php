@@ -3,6 +3,7 @@ if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
 $errors = ' ';
+$config['title'] .= " - {$lang['Register-1']}";
 // Страница регистрации нового пользователя
 if ($user_login == 'NOT LOGIN') {
 	// Соединямся с БД
@@ -11,25 +12,25 @@ if ($user_login == 'NOT LOGIN') {
 		$err = [];
 		// проверям логин
 		if (!preg_match('/^([a-zA-Z0-9])+([a-z0-9])$/is', $_POST['login'])) {
-			$err[] = 'Логин может состоять только из букв английского алфавита и цифр';
+			$err[] = $lang['Register-2'];
 		}
 		if (strlen($_POST['login']) < 3 or strlen($_POST['login']) > 10) {
-			$err[] = 'Логин должен быть не меньше 3-х символов и не больше 10';
+			$err[] = $lang['Register-3'];
 		}
 		if (!preg_match('/^([a-z0-9])(\w|[.]|-|_)+([a-z0-9])@([a-z0-9])([a-z0-9.-]*)([a-z0-9])([.]{1})([a-z]{2,4})$/is', $_POST['email'])) {
-			$err[] = 'Email введён не корректно';
+			$err[] = $lang['Register-4'];
 		}
 		if (strlen($_POST['email']) < 5 or strlen($_POST['email']) > 35) {
-			$err[] = 'Email должен быть не меньше 5-ти символов и не больше 35';
+			$err[] = $lang['Register-5'];
 		}
 		if (strlen($_POST['password']) < 5 or strlen($_POST['password']) > 30) {
-			$err[] = 'Пароль должен быть не меньше 5-ти символов и не больше 30';
+			$err[] = $lang['Register-6'];
 		}
 		if ($_POST['password'] != $_POST['password2']) {
-			$err[] = 'Пароли не совпадают';
+			$err[] = $lang['Register-7'];
 		}
 		if (!preg_match('/^([a-zA-Z0-9])(\w|-|_)+([a-z0-9])$/is', $_POST['password'])) {
-			$err[] = 'Пароль может состоять только из букв английского алфавита и цифр';
+			$err[] = $lang['Register-8'];
 		}
 		/*СОЗДАЕМ ФУНКЦИЮ КОТОРАЯ ДЕЛАЕТ ЗАПРОС НА GOOGLE СЕРВИС*/
 		function getCaptcha($SecretKey, $reSecretKey) {
@@ -43,19 +44,19 @@ if ($user_login == 'NOT LOGIN') {
 		if ($Return->success == true && $Return->score > 0.5) {
 		}
 		else {
-			$err[] = 'You are Robot';
+			$err[] = $lang['Register-9'];
 		}
 		// проверяем, не сущестует ли пользователя с таким именем
 		$user_login = mysqli_real_escape_string($link, $_POST['login']);
 		$query = mysqli_query($link, "SELECT user_id FROM users WHERE user_login='$user_login'");
 		if (mysqli_num_rows($query) > 0) {
-			$err[] = 'Пользователь с таким логином уже существует в базе данных';
+			$err[] = $lang['Register-10'];
 		}
 		// проверяем, не сущестует ли пользователя с таким Email
 		$user_email = mysqli_real_escape_string($link, $_POST['email']);
 		$query = mysqli_query($link, "SELECT user_id FROM users WHERE user_email='$user_email'");
 		if (mysqli_num_rows($query) > 0) {
-			$err[] = 'Пользователь с таким Email уже существует в базе данных';
+			$err[] = $lang['Register-11'];
 		}
 		// Если нет ошибок, то добавляем в БД нового пользователя
 		if (count($err) == 0) {
@@ -67,12 +68,12 @@ if ($user_login == 'NOT LOGIN') {
 				exit();
 			}
 			else {
-				$errors = '<b>MySQL error!</b><br />';
+				$errors = $lang['Register-12'];
 			}
 
 		}
 		else {
-			$errors = '<b>При регистрации произошли следующие ошибки:</b><br />';
+			$errors = "<b>{$lang['Register-13']}:</b><br />";
 			foreach ($err AS $error) {
 				$errors .= "$error <br />";
 			}
