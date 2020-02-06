@@ -17,6 +17,10 @@ if ($type == 'video') {
 elseif ($type == 'image') {
 	$get_count = mysqli_query($link, "SELECT * FROM files WHERE type='image'");
 }
+elseif (isset($_GET['id'])) {
+	$byUserId = $_GET['id'];
+	$get_count = mysqli_query($link, "SELECT * FROM files WHERE id='$byUserId'");
+}
 else {
 	$get_count = mysqli_query($link, "SELECT * FROM files");
 }
@@ -47,7 +51,6 @@ elseif ($type == 'image') {
 	$result = mysqli_query($link, "SELECT * FROM files WHERE type='image' ORDER BY id DESC LIMIT $start_from, $perPage");
 }
 elseif (isset($_GET['id'])) {
-	$byUserId = $_GET['id'];
 	$result = mysqli_query($link, "SELECT * FROM files WHERE user_id='$byUserId' ORDER BY id DESC LIMIT $start_from, $perPage");
 }
 else {
