@@ -20,6 +20,11 @@ Need enable "shell_exec" PHP function if you disable it in php.ini
 Testet on PHP 7.2.24, MySQL 5.7.29
 
 #### Changelog:
+v1.6
+
+add Avatar
+
+add sort by user id
 
 v1.5
 

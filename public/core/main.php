@@ -46,6 +46,10 @@ if ($type == 'video') {
 elseif ($type == 'image') {
 	$result = mysqli_query($link, "SELECT * FROM files WHERE type='image' ORDER BY id DESC LIMIT $start_from, $perPage");
 }
+elseif (isset($_GET['id'])) {
+	$byUserId = $_GET['id'];
+	$result = mysqli_query($link, "SELECT * FROM files WHERE user_id='$byUserId' ORDER BY id DESC LIMIT $start_from, $perPage");
+}
 else {
 	$result = mysqli_query($link, "SELECT * FROM files ORDER BY id DESC LIMIT $start_from, $perPage");
 }
@@ -87,6 +91,9 @@ if (mysqli_num_rows($result) > 0) {
 			}
 			elseif ($type == 'image') {
 				$pages .= "<a href=\"/?type=image&page={$page}\">{$page}</a> ";
+			}
+			elseif (isset($_GET['id'])) {
+				$pages .= "<a href=\"/?id={$byUserId}&page={$page}\">{$page}</a> ";
 			}
 			else {
 				$pages .= "<a href=\"/?page={$page}\">{$page}</a> ";

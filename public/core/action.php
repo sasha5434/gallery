@@ -87,6 +87,7 @@ else {
 									imagejpeg($simg, $config['uploadVideoPrevDir'] . $fileName . '.jpg', 100);
 									imagedestroy($dimg);
 									imagedestroy($simg);
+									unlink($config['tmpDir'] . "{$fileName}.jpg");
 									$redicet = $_SERVER['HTTP_REFERER'];
 									header("Location: $redicet");
 								}

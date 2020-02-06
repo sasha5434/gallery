@@ -1585,3 +1585,14 @@ a.nav:hover {
 	float:right;
 	display: inline;
 }
+
+.user {
+	font-size: 16px;
+}
+
+.user img {
+	width: 256px;
+	height: 256px;
+	float: left;
+	margin-right: 20px;
+}

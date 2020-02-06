@@ -32,6 +32,14 @@
 		<p> <b> * Thumbnail height: </b>
 			<input type="text" name="thumbHeight" size="30" required="required" value="{thumbHeight}"> </p>
 		<hr>
+		<h3> Avatars: </h3>
+		<p> <b> * Avatars here: </b>
+			<input type="text" name="avatarDir" size="30" required="required" value="{avatarDir}"> </p>
+		<p> <b> * Avatar width: </b>
+			<input type="text" name="avatarWidth" size="30" required="required" value="{avatarWidth}"> </p>
+		<p> <b> * Avatar height: </b>
+			<input type="text" name="avatarHeight" size="30" required="required" value="{avatarHeight}"> </p>
+		<hr>
 		<h3> Video Conversion: </h3>
 		<p> <b> * Video width: </b>
 			<input type="text" name="videoWidth" size="30" required="required" value="{videoWidth}"> </p>

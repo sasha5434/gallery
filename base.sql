@@ -58,6 +58,7 @@ CREATE TABLE `users` (
   `user_password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `user_reg_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `user_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `avatar` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_hash` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `user_ip` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP

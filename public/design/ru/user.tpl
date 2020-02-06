@@ -1,18 +1,12 @@
-<table>
-	<tr>
-		<td>Ид: </td>
-		<td>{id}</td>
-	</tr>
-	<tr>
-		<td>Логин: </td>
-		<td>{login}</td>
-	</tr>
-	<tr>
-		<td>Почта Email: </td>
-		<td>{email}</td>
-	</tr>
-	<tr>
-		<td>Зарегистрирован: </td>
-		<td>{regdate}</td>
-	</tr>
-</table>
+<div class="user">
+	<img src="/{avatar}" alt="avatar">
+	<p>Ид: {id} </p>
+	<p>Логин: {login}</p>
+	<p>Почта Email: {email}</p>
+	<p>Зарегистрирован: {regdate}</p>
+	<p>Загрузил файлов: <a href="/?id={id}">{uploadCount}</a></p>
+	<form {hideUpload} enctype="multipart/form-data" method="post">
+		<p><input name="avatar" type="file"></p>
+		<input type="submit" value="Загрузить аватар" class="btn-auth">
+	</form>
+</div>

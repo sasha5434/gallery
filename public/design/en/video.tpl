@@ -4,7 +4,7 @@
 					The video tag is not supported by your browser. <a href="{link}">Download video</a>.
 				</video>
 					<br />
-					<div class="block-left">{date}</div>
+					<div class="block-left"><time datetime="{date}">{date}</time></div>
 					<div class="block-right"> {Links} uploaded: <a href="{userlink}">{user}</a></div>
 					<br />
 				</div>

@@ -14,6 +14,9 @@ if ($user_login == $config['adminLogin']) {
 		$config['lang'] = $_POST['lang'];
 		$config['thumbWidth'] = $_POST['thumbWidth'];
 		$config['thumbHeight'] = $_POST['thumbHeight'];
+		$config['avatarDir'] = $_POST['avatarDir'];
+		$config['avatarHeight'] = $_POST['avatarHeight'];
+		$config['avatarWidth'] = $_POST['avatarWidth'];
 		$config['videoWidth'] = $_POST['videoWidth'];
 		$config['videoHeight'] = $_POST['videoHeight'];
 		$config['videoBitrate'] = $_POST['videoBitrate'];
@@ -54,6 +57,9 @@ if ($user_login == $config['adminLogin']) {
 		$parse->set_tpl('{lang}', $config['lang']);
 		$parse->set_tpl('{thumbWidth}', $config['thumbWidth']);
 		$parse->set_tpl('{thumbHeight}', $config['thumbHeight']);
+		$parse->set_tpl('{avatarDir}', $config['avatarDir']);
+		$parse->set_tpl('{avatarWidth}', $config['avatarWidth']);
+		$parse->set_tpl('{avatarHeight}', $config['avatarHeight']);
 		$parse->set_tpl('{videoWidth}', $config['videoWidth']);
 		$parse->set_tpl('{videoHeight}', $config['videoHeight']);
 		$parse->set_tpl('{videoBitrate}', $config['videoBitrate']);

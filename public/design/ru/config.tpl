@@ -22,6 +22,11 @@
 	<p><b>* Ширина миниатюры:</b>	<input type="text" name="thumbWidth" size="30" required="required" value="{thumbWidth}"></p>
 	<p><b>* Высота миниатюры:</b>	<input type="text" name="thumbHeight" size="30" required="required" value="{thumbHeight}"></p>
 	<hr>
+	<h3>Аватары:</h3>
+	<p><b>* Папка с аватарами:</b>	<input type="text" name="avatarDir" size="30" required="required" value="{avatarDir}"></p>
+	<p><b>* Ширина аватаров:</b>	<input type="text" name="avatarWidth" size="30" required="required" value="{avatarWidth}"></p>
+	<p><b>* Высота аватаров:</b>	<input type="text" name="avatarHeight" size="30" required="required" value="{avatarHeight}"></p>
+	<hr>
 	<h3>Конвертация видео:</h3>
 	<p><b>* Ширина видео:</b>	<input type="text" name="videoWidth" size="30" required="required" value="{videoWidth}"></p>
 	<p><b>* Высота видео:</b>	<input type="text" name="videoHeight" size="30" required="required" value="{videoHeight}"></p>

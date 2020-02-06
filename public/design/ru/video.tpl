@@ -4,7 +4,7 @@
 					Тег video не поддерживается вашим браузером. <a href="{link}">Скачайте видео</a>.
 				</video>
 					<br />
-					<div class="block-left">{date}</div>
+					<div class="block-left"><time datetime="{date}">{date}</time></div>
 					<div class="block-right"> {Links} загрузил: <a href="{userlink}">{user}</a></div>
 					<br />
 				</div>
