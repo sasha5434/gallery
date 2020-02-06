@@ -19,7 +19,7 @@ elseif ($type == 'image') {
 }
 elseif (isset($_GET['id'])) {
 	$byUserId = $_GET['id'];
-	$get_count = mysqli_query($link, "SELECT * FROM files WHERE id='$byUserId'");
+	$get_count = mysqli_query($link, "SELECT * FROM files WHERE user_id='$byUserId'");
 }
 else {
 	$get_count = mysqli_query($link, "SELECT * FROM files");
