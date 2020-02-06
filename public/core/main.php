@@ -17,8 +17,8 @@ if ($type == 'video') {
 elseif ($type == 'image') {
 	$get_count = mysqli_query($link, "SELECT * FROM files WHERE type='image'");
 }
-elseif (isset($_GET['id'])) {
-	$byUserId = $_GET['id'];
+elseif (isset($_GET['user_id'])) {
+	$byUserId = $_GET['user_id'];
 	$get_count = mysqli_query($link, "SELECT * FROM files WHERE user_id='$byUserId'");
 }
 else {
@@ -50,7 +50,7 @@ if ($type == 'video') {
 elseif ($type == 'image') {
 	$result = mysqli_query($link, "SELECT * FROM files WHERE type='image' ORDER BY id DESC LIMIT $start_from, $perPage");
 }
-elseif (isset($_GET['id'])) {
+elseif (isset($_GET['user_id'])) {
 	$result = mysqli_query($link, "SELECT * FROM files WHERE user_id='$byUserId' ORDER BY id DESC LIMIT $start_from, $perPage");
 }
 else {
@@ -96,7 +96,7 @@ if (mysqli_num_rows($result) > 0) {
 				$pages .= "<a href=\"/?type=image&page={$page}\">{$page}</a> ";
 			}
 			elseif (isset($_GET['id'])) {
-				$pages .= "<a href=\"/?id={$byUserId}&page={$page}\">{$page}</a> ";
+				$pages .= "<a href=\"/?user_id={$byUserId}&page={$page}\">{$page}</a> ";
 			}
 			else {
 				$pages .= "<a href=\"/?page={$page}\">{$page}</a> ";
