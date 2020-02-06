@@ -95,7 +95,7 @@ if (mysqli_num_rows($result) > 0) {
 			elseif ($type == 'image') {
 				$pages .= "<a href=\"/?type=image&page={$page}\">{$page}</a> ";
 			}
-			elseif (isset($_GET['id'])) {
+			elseif (isset($_GET['user_id'])) {
 				$pages .= "<a href=\"/?user_id={$byUserId}&page={$page}\">{$page}</a> ";
 			}
 			else {
