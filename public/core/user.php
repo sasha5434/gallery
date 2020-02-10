@@ -11,7 +11,8 @@ if (isset($_FILES['avatar']['tmp_name']) and isset($_GET['id'])) {
 			// будущее имя файла
 			$target_name = $myrow['user_login'] . '.jpg';
 			$put_file = $_FILES['avatar']['tmp_name'];
-			if ($size = getimagesize($put_file)) {
+			$size = getimagesize($put_file);
+			if ($size[2] == 1 or $size[2] == 2 or $size[2] == 3) {
 				$w = $size[0]; // Ширина изображения
 				$h = $size[1]; // Высота изображения
 				$stype = $size[2]; // Тип файла на всякий случай возьмём из переменной
