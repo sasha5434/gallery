@@ -3,8 +3,6 @@ if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
 // Скрипт проверки
-// Соединямся с БД
-$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 if (isset($_COOKIE['id']) and isset($_COOKIE['hash'])) {
 	$query = mysqli_query($link, "SELECT * FROM users WHERE user_id = '" . intval($_COOKIE['id']) . "' LIMIT 1");
 	$userdata = mysqli_fetch_assoc($query);
@@ -29,4 +27,3 @@ else {
 	$echoLogin = "{$lang['CheckAuth-4']}! <a href=\"/?do=login\">{$lang['CheckAuth-5']}</a> | <a href=\"/?do=reg\">{$lang['CheckAuth-6']}</a>";
 	$isLoged = '0';
 }
-?>

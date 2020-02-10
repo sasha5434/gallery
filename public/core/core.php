@@ -4,6 +4,9 @@ if (!defined('DONTHACKME')) {
 }
 @include (CORE_DIR . '/config.php');
 
+// Соединение с БД
+$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
+
 if (isset($_POST['setlang'])) {
 	setcookie("lang", $_POST['setlang']);
 	if ($_POST['setlang'] == 'ru') {
@@ -112,6 +115,4 @@ if ($printcontent == '1') {
 	$parse->set_tpl('{admLink}', $admLink);
 	$parse->tpl_parse(); // Собираем страничку
 	echo $parse->template; // Выводим страничку
-	
 }
-?>

@@ -10,27 +10,10 @@ else {
 		$method = $_GET['method'];
 		switch ($method) {
 			case 'image':
-				set_time_limit(120);
-				// Создаем подключение к серверу
-				$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
-				// Вытаскиваем необходимые данные
-				$file = $_POST['value'];
-				$name = $_POST['name'];
-				// Получаем расширение файла
-				$getMime = explode('.', $name);
-				$mime = end($getMime);
-				// проверка типа файла
-				$valid_types = array(
-					'gif',
-					'jpg',
-					'jpeg',
-					'png',
-					'GIF',
-					'JPG',
-					'JPEG',
-					'PNG'
-				);
-				if (in_array($mime, $valid_types)) {
+				if (isset($_POST['value']) and isset($_POST['name'])) {
+					// Вытаскиваем необходимые данные
+					$file = $_POST['value'];
+					$name = $_POST['name'];
 					// Выделим данные
 					$data = explode(',', $file);
 					// Декодируем данные, закодированные алгоритмом MIME base64
@@ -45,7 +28,8 @@ else {
 					if (file_put_contents($config['tmpDir'] . $randomName, $decodedData)) {
 						// обрабаатываем файл во временной папке и создаём миниатюру
 						$put_file = $config['tmpDir'] . $randomName;
-						if ($size = getimagesize($put_file)) {
+						$size = getimagesize($put_file);
+						if ($size[2] == 1 or $size[2] == 2 or $size[2] == 3) {
 							$w = $size[0]; // Ширина изображения
 							$h = $size[1]; // Высота изображения
 							$stype = $size[2]; // Тип файла на всякий случай возьмём из переменной
@@ -106,9 +90,6 @@ else {
 					else {
 						echo "{$lang['Upload-7']} $name  {$lang['Upload-6']}!<br />";
 					}
-				}
-				else {
-					echo "{$lang['Upload-8']} <font color=\"red\">$name</font>! {$lang['Upload-9']}!<br />";
 				}
 			break;
 			case 'video':
@@ -185,7 +166,7 @@ else {
 								shell_exec('php ' . $config['siteDir'] . 'ffmpeg-converter.php ' . $randomName . ' > /dev/null &');
 								imagedestroy($dimg);
 								imagedestroy($simg);
-								unlink($config['siteDir'] . $config['tmpDir'] . 'frame.jpg');								
+								unlink($config['siteDir'] . $config['tmpDir'] . 'frame.jpg');
 								echo "<!-- %@" . $randomName . "@% -->{$lang['Upload-10']} - " . $_FILES["video"]["name"] . "<br/>{$lang['Upload-11']}.";
 							}
 							else {
@@ -211,9 +192,6 @@ else {
 			case 'status':
 				if (isset($_GET['file'])) {
 					$file = $_GET['file'];
-					// Создаем подключение к серверу
-					$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
-					
 					if ($myrow = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM queue WHERE file = '$file'"))) {
 						$percentage = $myrow['percentage'];
 						echo $percentage;
@@ -226,4 +204,3 @@ else {
 		}
 	}
 }
-?>

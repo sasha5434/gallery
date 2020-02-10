@@ -6,7 +6,6 @@ if ($user_login == 'NOT LOGIN') {
 	echo "{$lang['Action-1']} <br />";
 }
 else {
-	$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 	if (isset($_GET['step'])) {
 		if (isset($_GET['id'])) {
 			$fileId = $_GET['id'];
@@ -119,4 +118,3 @@ else {
 		echo $lang['Action-7'];
 	}
 }
-?>

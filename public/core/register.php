@@ -6,8 +6,6 @@ $errors = ' ';
 $config['title'] .= " - {$lang['Register-1']}";
 // Страница регистрации нового пользователя
 if ($user_login == 'NOT LOGIN') {
-	// Соединямся с БД
-	$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 	if (isset($_POST['submit'])) {
 		$err = [];
 		// проверям логин
@@ -88,4 +86,3 @@ if ($user_login == 'NOT LOGIN') {
 else {
 	header('Location: /');
 }
-?>

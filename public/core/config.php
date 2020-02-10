@@ -32,4 +32,3 @@ $config = array (
   'reSiteKey' => 'keyFromGoogle!!!!!!!!!!!!!',
   'reSecretKey' => 'keyFromGoogle!!!!!!!!!!!!!',
 );
-?>

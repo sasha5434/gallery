@@ -22,4 +22,3 @@ else {
 		$content = $parse->template;
 	}
 }
-?>

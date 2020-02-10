@@ -5,9 +5,6 @@ if (!defined('DONTHACKME')) {
 
 if (isset($_FILES['avatar']['tmp_name']) and isset($_GET['id'])) {
 	$view_id = $_GET['id'];
-	set_time_limit(120);
-	// Создаем подключение к серверу
-	$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 	$result = mysqli_query($link, "SELECT * FROM users WHERE user_id=$view_id");
 	if ($myrow = mysqli_fetch_assoc($result)) {
 		if ($user_login == $myrow['user_login'] or $user_login == $config['adminLogin']) {
@@ -67,8 +64,6 @@ if (isset($_FILES['avatar']['tmp_name']) and isset($_GET['id'])) {
 	unlink($put_file);
 }
 else {
-	// Создаем подключение к серверу
-	$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 	// Получаем количество записей таблицы
 	$get_count = mysqli_query($link, "SELECT * FROM users");
 	if ($get_count) {
@@ -127,4 +122,3 @@ else {
 	}
 	$config['title'] .= " - {$lang['User-3']} " . $myrow['user_login'];
 }
-?>

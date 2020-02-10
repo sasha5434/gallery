@@ -21,10 +21,11 @@ START TRANSACTION;
 -- Структура таблицы `files`
 --
 
+
 CREATE TABLE `files` (
   `id` int(6) NOT NULL,
   `date` datetime NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `user_id` int(5) NOT NULL,
   `filename` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `type` varchar(12) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'image'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -44,7 +45,7 @@ INSERT INTO `files` (`id`, `date`, `user_id`, `filename`, `type`) VALUES
 CREATE TABLE `queue` (
   `file` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `percentage` tinyint(3) UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,7 @@ CREATE TABLE `users` (
   `user_password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `user_reg_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `user_email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `avatar` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `avatar` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_hash` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `user_ip` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_reg_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP

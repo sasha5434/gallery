@@ -4,8 +4,7 @@ if (!defined('DONTHACKME')) {
 }
 $config['title'] .= " - {$lang['Main-1']}";
 $perPage = $config['perPage'];
-// Создаем подключение к серверу
-$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
+
 // Получаем количество записей таблицы
 $type = 'all';
 if (isset($_GET['type'])) {
@@ -113,4 +112,3 @@ else {
 	// Собщение о пустой таблице
 	$content = "<p>{$lang['Main-3']}.</p>";
 }
-?>

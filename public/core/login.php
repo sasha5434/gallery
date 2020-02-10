@@ -15,8 +15,6 @@ function generateCode($length = 6) {
 	}
 	return $code;
 }
-// Соединямся с БД
-$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 if (isset($_POST['submit'])) {
 	/*СОЗДАЕМ ФУНКЦИЮ КОТОРАЯ ДЕЛАЕТ ЗАПРОС НА GOOGLE СЕРВИС*/
 	function getCaptcha($SecretKey, $reSecretKey) {
@@ -62,4 +60,3 @@ $parse->set_tpl('{errors}', $errors);
 $parse->set_tpl('{reSiteKey}', $config['reSiteKey']);
 $parse->tpl_parse();
 $content = $parse->template;
-?>

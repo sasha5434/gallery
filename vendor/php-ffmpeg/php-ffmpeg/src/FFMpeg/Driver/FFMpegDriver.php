@@ -45,7 +45,7 @@ class FFMpegDriver extends AbstractBinary
         $binaries = $configuration->get('ffmpeg.binaries', array('avconv', 'ffmpeg'));
 
         if (!$configuration->has('timeout')) {
-            $configuration->set('timeout', 300);
+            $configuration->set('timeout', 3000);
         }
 
         try {

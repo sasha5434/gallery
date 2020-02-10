@@ -33,4 +33,3 @@ if (mysqli_num_rows($result) > 0)
     unlink($config['siteDir'] . $config['tmpDir'] . $file . '.mp4');
     mysqli_query($link, "DELETE FROM queue WHERE queue.file =  '$file'");
 }
-?>

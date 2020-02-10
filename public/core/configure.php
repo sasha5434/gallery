@@ -39,7 +39,6 @@ if ($user_login == $config['adminLogin']) {
 			$string .= "	die('Dont hack me!');\n";
 			$string .= "}\n";
 			$string .= "\$config = $arrayAsString;\n";
-			$string .= "?>\n";
 			file_put_contents(CORE_DIR . '/config.php', $string);
 		}
 		$write = writeConfig($config);

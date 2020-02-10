@@ -3,8 +3,6 @@ if (!defined('DONTHACKME')) {
 	die('Dont hack me!');
 }
 $config['title'] .= " - {$lang['View-1']}";
-// Создаем подключение к серверу
-$link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 // Получаем количество записей таблицы
 $get_count = mysqli_query($link, "SELECT * FROM files");
 if ($get_count) {
@@ -67,4 +65,3 @@ if ($get_count) {
 else {
 	$content = $lang['View-5'];
 }
-?>
