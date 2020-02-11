@@ -1,6 +1,6 @@
 
 <div class="auth">
-{errors}
+    {errors}
     <h3> Registration </h3>
     <form id="reg_form" method="POST">
         <div class="form-auth">
@@ -17,12 +17,12 @@
             <button name="submit" type="submit" class="btn-auth"> Register </button>
         </div>
     </form>
-	<script src="https://www.google.com/recaptcha/api.js?render={reSiteKey}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render={reSiteKey}"></script>
     <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('{reSiteKey}', {action: 'homepage'}).then(function(token) {
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{reSiteKey}', {action: 'homepage'}).then(function (token) {
                 console.log(token);
-                document.getElementById('g-recaptcha-response').value=token;
+                document.getElementById('g-recaptcha-response').value = token;
             });
         });
     </script>
