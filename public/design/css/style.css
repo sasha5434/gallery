@@ -97,9 +97,8 @@ img, object, video, embed {
     height: 100%;
 }
 
-video {
-    max-width: 1230px;
-    max-height: 692px;
+object {
+	max-height: 690px;
 }
 
 .content {

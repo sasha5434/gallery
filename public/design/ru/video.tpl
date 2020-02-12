@@ -1,7 +1,12 @@
 <div class="view-block">
-    <video id="movie" controls poster="{prev}" preload="none">
+    <video id="movie" width="640" height="360" style="max-width:100%;" poster="{prev}" preload="none" controls playsinline webkit-playsinline>
         <source src="{link}" type="video/mp4">
-        Тег video не поддерживается вашим браузером. <a href="{link}">Скачайте видео</a>.
+        <object width="640" height="360" type="application/x-shockwave-flash" data="/design/player/player.swf">
+            <param name="movie" value="/design/player/player.swf" />
+            <param name="flashvars" value="autostart=true&amp;controlbar=over&amp;image=/{prev}&amp;file=/{link}" />
+            <img src="/{prev}" width="640" height="360" title="No video playback capabilities" />
+            Тег video не поддерживается вашим браузером. <a href="{link}">Скачайте видео</a>.
+        </object>
     </video>
     <br />
     <div class="block-left"><time datetime="{date}">{date}</time></div>
@@ -12,13 +17,7 @@
 <div class="page-block"> <a href="/#" onclick="javascript:history.back();
                                         return false;">Назад</a> </div>
 <script>
-    var v = document.getElementById("movie");
-    document.getElementById("movie").volume = 0.5;
-    v.onclick = function () {
-        if (v.paused) {
-            v.play();
-        } else {
-            v.pause();
-        }
-    };
+    $('video:not(.mep-playlist)').mediaelementplayer({
+        "features": ['playpause', 'current', 'progress', 'duration', 'tracks', 'volume', 'fullscreen'],
+    });
 </script>

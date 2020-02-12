@@ -6,10 +6,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="icon" href="/design/image/favicon.ico" type="image/x-icon">
         <link href="/design/css/style.css" type="text/css" rel="stylesheet">
-        <script src="/design/js/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script type="module" async="async" src="/design/js/main.js"></script>
+        <link href="/design/player/mediaelementplayer.min.css" type="text/css" rel="stylesheet">
+        <script src="/design/player/mediaelement-and-player.min.js"></script>
     </head>
-
     <body>
         <div class="wrapper">
             <!-- button -->
