@@ -7,7 +7,7 @@ if ($user_login == 'NOT LOGIN') {
     echo "{$lang['Action-1']} <br />";
 } else {
     if (isset($_GET['step'])) {
-        if (isset($_GET['id'])) {
+        if (isset($_GET['id']) and is_numeric($_GET['id'])) {
             $fileId = $_GET['id'];
             $result = mysqli_query($link, "SELECT * FROM files WHERE id=$fileId");
             $count_records = mysqli_num_rows($result);

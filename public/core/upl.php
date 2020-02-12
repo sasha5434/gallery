@@ -68,22 +68,22 @@ if ($user_login == 'NOT LOGIN') {
                             if (mysqli_query($link, "INSERT INTO files SET date = NOW(), user_id = '$user_id', filename = '$randomName', type = 'image'")) {
                                 imagejpeg($dimg, $config['thumbDir'] . $target_name, 100);
                                 imagejpeg($simg, $config['uploadDir'] . $target_name, 100);
-                                echo "{$lang['Upload-2']}: <a href='" . $config['uploadDir'] . $target_name . "'>" . $name . "</a><br />";
+                                echo "{$lang['Upload-2']}: <a href='" . htmlspecialchars($config['uploadDir']) . $target_name . "'>" . htmlspecialchars($name) . "</a><br />";
                                 // освобождаем память
                                 imagedestroy($dimg);
                                 imagedestroy($simg);
                             } else {
-                                echo "{$lang['Upload-3']} $name ! {$lang['Upload-4']}!<br />";
+                                echo $lang['Upload-3'] . htmlspecialchars($name) . $lang['Upload-4'] . '!<br />';
                                 imagedestroy($dimg);
                                 imagedestroy($simg);
                             }
                         } else {
-                            echo "{$lang['Upload-5']} $name {$lang['Upload-6']}!<br />";
+                            echo $lang['Upload-5'] . htmlspecialchars($name) . $lang['Upload-6'] . '!<br />';
                         }
                         //удаляем временный файл
                         unlink($config['tmpDir'] . $randomName);
                     } else {
-                        echo "{$lang['Upload-7']} $name  {$lang['Upload-6']}!<br />";
+                        echo $lang['Upload-7'] . htmlspecialchars($name) . $lang['Upload-6'] . '!<br />';
                     }
                 }
                 break;

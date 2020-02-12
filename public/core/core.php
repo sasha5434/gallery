@@ -9,11 +9,12 @@ if (!defined('DONTHACKME')) {
 $link = mysqli_connect($config['mysqlHost'], $config['mysqlUser'], $config['mysqlPassword'], $config['mysqlBase']);
 
 if (isset($_POST['setlang'])) {
-    setcookie("lang", $_POST['setlang']);
     if ($_POST['setlang'] == 'ru') {
+    	setcookie("lang", 'ru');
         define('DESIGN_DIR', ROOT_DIR . '/design' . '/ru');
         @include (LANG_DIR . '/' . 'ru' . '.php');
     } else if ($_POST['setlang'] == 'en') {
+    	setcookie("lang", 'en');
         define('DESIGN_DIR', ROOT_DIR . '/design' . '/en');
         @include (LANG_DIR . '/' . 'en' . '.php');
     }
