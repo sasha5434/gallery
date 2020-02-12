@@ -16,7 +16,9 @@
 <br />
 <div class="page-block"> <a href="/#" onclick="javascript:history.back();
                                         return false;">Назад</a> </div>
+<script src="/design/player/lang/ru.js"></script>
 <script>
+    mejs.i18n.language('ru'); 
     $('video:not(.mep-playlist)').mediaelementplayer({
         "features": ['playpause', 'current', 'progress', 'duration', 'tracks', 'volume', 'fullscreen'],
     });
